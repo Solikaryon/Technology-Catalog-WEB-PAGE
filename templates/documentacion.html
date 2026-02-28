@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación - Tecnologías</title>
+    <script>(function(){try{if(localStorage.getItem('theme-pref')==='dark')document.documentElement.className='dark-mode';}catch(e){}})();</script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+    /* Stylized documentation table using theme variables so dark-mode works */
+    .doc-hero{ display:flex; align-items:center; gap:16px; padding:18px 12px; border-radius:12px; background: linear-gradient(180deg, rgba(0,82,136,0.08), rgba(0,82,136,0.02)); margin-bottom:18px; border:1px solid rgba(0,82,136,0.10); }
+    .doc-hero h1{ margin:0; font-size:1.6rem; color: var(--main-text); }
+    .doc-hero p{ margin:0; color: color-mix(in srgb, var(--main-text) 70%, transparent); }
+    .doc-table{ width:100%; border-collapse:separate; border-spacing:0 12px }
+    .doc-table thead th{ text-align:left; padding:8px 12px; color:var(--main-text); font-weight:700 }
+    .doc-table tbody td{ background:var(--graphics-bg); padding:12px; vertical-align:middle; border:1px solid var(--canva-tertiary) }
+    .row-card{ box-shadow:0 6px 20px rgba(3,15,30,0.06); border-radius:10px; overflow:hidden; background: var(--title-bg); border:1px solid var(--canva-tertiary); }
+    .row-actions{ display:flex; gap:8px; justify-content:flex-end }
+    .btn-doc{ background: linear-gradient(180deg, var(--main-col), #0b6aa0); color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; display:inline-block }
+    .btn-doc.secondary{ background: linear-gradient(180deg, #64748b, #475569) }
+    .col-title{ font-weight:700; color:var(--main-text); }
+    .doc-grid{ display:grid; grid-template-columns: 2fr 1fr; gap:12px; align-items:center }
+    @media(max-width:900px){ .doc-grid{ grid-template-columns: 1fr } }
+    /* Doc list cards */
+    .doc-list{ display:flex; flex-direction:column; gap:12px }
+    .row-card{ padding:14px; border-radius:10px; background: #F1EDED; border:1px solid var(--canva-tertiary); box-shadow: 0 6px 20px rgba(3,15,30,0.04); }
+    .row-card + .row-card{ margin-top:6px }
+    .doc-meta{ margin-bottom:6px; color: #445; }
+    .doc-meta strong{ color: inherit; font-weight:700 }
+    .doc-meta-val{ color: #234; }
+    .link-pill{ display:inline-block; max-width:260px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:6px 8px; border-radius:8px; background:var(--graphics-bg); color:var(--main-text); font-size:13px; border:1px solid var(--canva-tertiary) }
+    .btn.small{ padding:6px 10px; font-size:13px; border-radius:8px; background: var(--canva-secondary); color: var(--main-text); border: 1px solid var(--canva-tertiary) }
+    .row-actions .btn-doc{ min-width:140px; text-align:center }
+    .btn-link-icon{ display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; background:var(--canva-secondary); color:var(--main-text); text-decoration:none; border:1px solid var(--canva-tertiary); font-size:18px }
+    .btn-link-icon:hover{ background: color-mix(in srgb, var(--canva-secondary) 72%, var(--graphics-bg)); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(3,15,30,0.06) }
+
+    /* Dark-mode specific tweaks to ensure cards and buttons look correct */
+    body.dark-mode .doc-hero{ background: linear-gradient(90deg, #0f172a, #14283b); border-color: #2e3f52; }
+    body.dark-mode .row-card{ background: #0f172a; border-color:#334155; box-shadow: 0 8px 26px rgba(0,0,0,0.6); }
+    body.dark-mode .link-pill{ background:#0f1e2e; color:#e2e8f0; border:1px solid #2e3f52 }
+    body.dark-mode .btn-doc{ background: linear-gradient(180deg, var(--main-col), #006fa8); color:#fff }
+    body.dark-mode .btn-doc.secondary{ background: linear-gradient(180deg,#14283b,#0f172a); color:#e2e8f0 }
+    body.dark-mode .btn-link-icon{ background:#0f1e2e; color:#e2e8f0; border:1px solid #2e3f52 }
+    body.dark-mode .doc-meta{ color: #f1f5f9; }
+    body.dark-mode .doc-meta-val{ color: #f1f5f9; }
+    </style>
+</head>
+<body>
+    {% include '_site_header.html' %}
+    <main style="padding:18px; max-width:1100px; margin:0 auto">
+        <div class="doc-hero">
+            <div style="font-size:36px">📚</div>
+            <div>
+                <h1 data-i18n="documentation_title">Documentación de Tecnologías</h1>
+                <p style="margin:6px 0;color:#334" data-i18n="documentation_hero_p">Documentación. Use el botón de cada fila para ir al enlace asociado.</p>
+            </div>
+        </div>
+
+        {% if not rows %}
+            <div style="padding:24px;background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.04)"><span data-i18n="no_entries_table">No hay entradas en la tabla</span> <strong>Tecnologias_Tecnologias</strong>.</div>
+        {% else %}
+            <div class="doc-list">
+                {% for r in rows %}
+                <article class="row-card" role="article" aria-labelledby="tech-{{ loop.index }}">
+                    <div class="doc-grid">
+                        <div>
+                            <div id="tech-{{ loop.index }}" style="font-size:16px; margin-bottom:6px"><span class="col-title">{{ r.get('Tecnologia','') }}</span></div>
+                            <div class="doc-meta">{% if r.get('Documento') %}<strong data-i18n="document_label">Documento:</strong> <span class="doc-meta-val">{{ r['Documento'] }}</span>{% endif %}</div>
+                            <div style="margin-top:6px;color:#334; font-size:14px;">
+                                {% for c in columns %}
+                                    {# Skip the technology, documento and the column used as URL (we show it via button) #}
+                                    {% if c not in ['Tecnologia','Documento'] and (r._url_column is none or c != r._url_column) and r.get(c) %}
+                                        <div style="margin-bottom:4px;"><strong style="color:#556">{{ c }}:</strong> <span style="color:#2b4252">{{ r[c] }}</span></div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row-actions">
+                            {% if r._url_column %}
+                                {% set urlval = r.get(r._url_column) %}
+                                {% if urlval %}
+                                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+                                        <a class="btn" href="{{ urlval }}" target="_blank" rel="noopener" data-i18n="open_link">Abrir Enlace</a>
+                                    </div>
+                                {% else %}
+                                    <a class="btn-doc secondary" href="#" aria-disabled="true" data-i18n="no_link">Sin enlace</a>
+                                {% endif %}
+                            {% else %}
+                                {% if r.get('Documento') %}
+                                    <form method="POST" action="/tecnologia" style="margin:0">
+                                        <input type="hidden" name="tecnologia" value="ALL">
+                                        <input type="hidden" name="documento" value="{{ r['Documento'] }}">
+                                        <button type="submit" class="btn" data-i18n="view_related_entries">Ver entradas relacionadas</button>
+                                    </form>
+                                {% else %}
+                                    <a class="btn-doc secondary" href="#" aria-disabled="true" data-i18n="no_link">Sin enlace</a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </main>
+    {% include '_site_footer.html' %}
+</body>
+<script>
+// copy-to-clipboard handler for documentacion page
+document.addEventListener('click', function(e){
+    var btn = e.target.closest('.copy-btn');
+    if(!btn) return;
+    var url = btn.getAttribute('data-url') || '';
+    if(!url) return;
+    try{
+        navigator.clipboard.writeText(url).then(function(){
+            var orig = btn.textContent;
+            btn.textContent = 'Copiado';
+            setTimeout(function(){ btn.textContent = orig; }, 1400);
+        }).catch(function(){ alert('No se pudo copiar.'); });
+    }catch(err){ try{ window.clipboardData.setData('text', url); alert('Copiado'); }catch(e){ alert('No se pudo copiar.'); } }
+});
+</script>
+</html>

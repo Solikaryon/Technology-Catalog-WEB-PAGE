@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Propuestas Guardadas</title>
+    <script>(function(){try{if(localStorage.getItem('theme-pref')==='dark')document.documentElement.className='dark-mode';}catch(e){}})();</script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% set back_url = '/' %}
+    {% set show_back = True %}
+    {% include '_site_header.html' %}
+    <h1>Propuestas</h1>
+
+    {% if proposals %}
+        <div class="proposals-row">
+        {% for p in proposals %}
+            <div class="proposal-card">
+                <h3>{{ p.title }}</h3>
+                <div class="tabla-container">{{ p.html|safe }}</div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>No se encontraron tablas de Proposal.</p>
+    {% endif %}
+
+    <!-- Modal overlay for detailed info -->
+    <div id="info-overlay" class="info-overlay" aria-hidden="true">
+        <div class="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title">
+            <button id="info-close" class="info-close" aria-label="Cerrar">✕</button>
+            <h2 id="info-title">Detalle</h2>
+            <div class="info-body" style="display:flex;gap:16px;align-items:flex-start;">
+                <div id="info-content" class="info-content" style="flex:1"></div>
+                <div id="info-image" class="info-image" aria-hidden="true" style="width:220px;min-width:160px"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/popover.js') }}"></script>
+
+    <!-- Loading overlay for when navigating between pages -->
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="loading-box">
+            <div class="spinner" aria-hidden="true"></div>
+            <div class="loading-text">Cargando...</div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+
+</body>
+    {% include '_site_footer.html' %}
+</html>

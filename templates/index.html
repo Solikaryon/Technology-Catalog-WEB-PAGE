@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tecnologías</title>
+    <script>(function(){try{if(localStorage.getItem('theme-pref')==='dark')document.documentElement.className='dark-mode';}catch(e){}})();</script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% include '_site_header.html' %}
+
+    <!-- Top bar / brand -->
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-logo" aria-hidden="true" style="font-size: 3em;">📘</span>
+            <!-- Aumentar tamaño del texto -->
+            <span class="brand-name" style="font-size: 3em;" data-i18n="catalog_title">Catálogo de Tecnologías</span>
+        </div>
+                <nav class="top-actions">
+                        <a class="btn" href="/search" data-i18n="search_and_build">Buscar y crear propuestas</a>
+                        <a class="btn show-loading" href="/propuestas" data-i18n="view_proposals">Visualizar Propuestas</a>
+                        <a class="btn" href="/documentacion" data-i18n="documentation">Documentación</a>
+                        <button id="open-admin" class="btn" type="button">⚙️ Admin</button>
+        </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-top" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+            <h1 class="hero-title" data-i18n="select_technology">Selecciona una Tecnología</h1>
+            <div>
+                <button id="reset-col-widths" class="btn" type="button" data-i18n="reset_col_widths" data-i18n-title="reset_col_widths" title="Restablecer anchos de columnas">Restablecer anchos</button>
+            </div>
+        </div>
+        <p class="hero-subtitle" data-i18n="hero_paragraph">Explora documentos y tablas asociadas por tecnología. Usa el panel para ver todas o filtrar por familia.</p>
+    </section>
+
+    <div class="index-layout">
+        <!-- Left: resultados inline -->
+        <div class="side-left" style="flex:1;">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title" data-i18n="results">Resultados</h2>
+                </div>
+                <div id="results-body" class="results-body" aria-live="polite" aria-busy="false" style="min-height:180px;">
+                    <p style="margin:0;color:#324e63" data-i18n="select_tech_placeholder">Selecciona una tecnología para ver sus tablas aquí.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Technologies (fijo) -->
+        <div class="side-right" style="width:360px; flex:none;">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title" data-i18n="technologies">Tecnologías</h2>
+                    <div class="panel-actions">
+                        <button id="clear-selections" type="button" class="btn clear-selections-btn" title="Borrar selecciones" aria-label="Borrar selecciones" data-i18n-title="clear_filters" data-i18n="clear_filters">Borrar filtros</button>
+                    </div>
+                </div>
+
+                <!-- quick filter (client-side) -->
+                <div class="quick-filter floating-field">
+                        <input id="tech-filter" class="tech-btn" type="search" placeholder=" " aria-label="Filtrar tecnologías">
+                        <label for="tech-filter" data-i18n="filter_label">Filtrar tecnologías...</label>
+                </div>
+
+                <div class="tech-list" id="tech-list">
+                    <!-- 'Todas' button (shows all tables) -->
+                    <form method="POST" action="/tecnologia" class="tech-form tech-item" data-tech="todas">
+                        <input type="hidden" name="tecnologia" value="ALL">
+                        <input type="hidden" name="documento" value="ALL">
+                        <button type="submit" class="tech-btn all-btn" data-i18n="all_technologies">Todas las Tecnologías</button>
+                    </form>
+
+                    <!-- One form/button per technology group -->
+                    {% for t in tecnologias %}
+                    <form method="POST" action="/tecnologia" class="tech-form tech-item" data-tech="{{ t.Tecnologia | lower }}">
+                        <input type="hidden" name="tecnologia" value="{{ t.Tecnologia }}">
+                        <input type="hidden" name="documento" value="{{ t.Documento }}">
+                        <button type="submit" class="tech-btn">{{ t.Tecnologia }}</button>
+                    </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay (shows when navigating to slow pages) -->
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="loading-box">
+            <div class="spinner" aria-hidden="true"></div>
+            <div class="loading-text">Cargando...</div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+        <script>
+        // Reset column widths to uniform value (220px) for all visible tables
+        (function(){
+            function setUniformWidths(px){
+                var tables = document.querySelectorAll('table');
+                tables.forEach(function(tbl){
+                    try{
+                        var ths = tbl.querySelectorAll('th');
+                        if(ths && ths.length){
+                            ths.forEach(function(th){ th.style.width = px; });
+                        } else {
+                            // fallback: use first row cells
+                            var first = tbl.querySelector('tr');
+                            if(first){
+                                var cells = first.querySelectorAll('td');
+                                cells.forEach(function(c){ c.style.width = px; });
+                            }
+                        }
+                        // also set each td in each row to the width
+                        tbl.querySelectorAll('tr').forEach(function(r){
+                            r.querySelectorAll('td').forEach(function(td){ td.style.width = px; });
+                        });
+                    }catch(e){/* ignore */}
+                });
+            }
+
+            var btn = document.getElementById('reset-col-widths');
+            if(btn){
+                btn.addEventListener('click', function(){
+                    setUniformWidths('220px');
+                });
+            }
+        })();
+        </script>
+
+    <script>
+    // client-side filter for technology list (non-destructive)
+    (function(){
+        var input = document.getElementById('tech-filter');
+        if(!input) return;
+        input.addEventListener('input', function(){
+            var q = (input.value || '').trim().toLowerCase();
+            var items = document.querySelectorAll('.tech-item');
+            if(!items) return;
+            items.forEach(function(el){
+                var key = (el.getAttribute('data-tech') || '').toLowerCase();
+                el.style.display = (!q || key.indexOf(q) !== -1) ? '' : 'none';
+            });
+        });
+    })();
+
+    // clear selections button handler
+    (function(){
+        var clearBtn = document.getElementById('clear-selections');
+        if(!clearBtn) return;
+        clearBtn.addEventListener('click', function(){
+            // remove active class from any selected tech buttons
+            document.querySelectorAll('.tech-list .tech-btn.active').forEach(function(b){ b.classList.remove('active'); });
+            // if 'Todas' button exists, ensure it's not active either
+            var allBtn = document.querySelector('.tech-form[data-tech="todas"] .all-btn');
+            if(allBtn) allBtn.classList.remove('active');
+            // ensure any loading overlay is hidden when clearing
+            try{ var ov=document.getElementById('loading-overlay'); if(ov){ ov.classList.remove('visible'); ov.setAttribute('aria-hidden','true'); } }catch(e){}
+            // clear inline results area
+            var results = document.getElementById('results-body');
+            if(results) results.innerHTML = '<p style="margin:0;color:#324e63">Selecciona una tecnología para ver sus tablas aquí.</p>';
+        });
+    })();
+
+    // intercept tech forms to load results inline
+    (function(){
+        var results = document.getElementById('results-body');
+        function setBusy(b){ if(!results) return; results.setAttribute('aria-busy', b? 'true':'false'); }
+        function showLoading(){ var ov=document.getElementById('loading-overlay'); if(ov) ov.classList.add('visible'); }
+        function hideLoading(){ var ov=document.getElementById('loading-overlay'); if(ov) ov.classList.remove('visible'); }
+        function bind(){
+            var forms = document.querySelectorAll('.tech-form');
+            var allBtnForm = document.querySelector('.tech-form[data-tech="todas"]');
+            var allBtn = allBtnForm ? allBtnForm.querySelector('.all-btn') : null;
+            forms.forEach(function(f){
+                f.addEventListener('submit', function(ev){
+                    ev.preventDefault();
+                    var fd = new FormData(f);
+                    var payload = { tecnologia: fd.get('tecnologia'), documento: fd.get('documento') };
+                    var btn = f.querySelector('button.tech-btn');
+                    var key = String((payload.tecnologia||'').toLowerCase()) + '|' + String((payload.documento||'').toLowerCase());
+
+                    // Special handling for "Todas las Tecnologías": limpia selección y carga todo
+                    if((payload.tecnologia||'').toUpperCase() === 'ALL'){
+                        // If already active, toggle OFF: remove its sections and restore hint
+                        if(btn && btn.classList.contains('active')){
+                            btn.classList.remove('active');
+                            results.innerHTML = '<p style="margin:0;color:#324e63">Selecciona una tecnología para ver sus tablas aquí.</p>';
+                            // hide any loading overlay just in case one was left visible
+                            try{ var ov=document.getElementById('loading-overlay'); if(ov){ ov.classList.remove('visible'); ov.setAttribute('aria-hidden','true'); } }catch(e){}
+                            return;
+                        }
+                        // Activate ALL: remove any existing technology sections and active states
+                        document.querySelectorAll('.tech-list .tech-btn').forEach(function(b){ b.classList.remove('active'); });
+                        if(btn) btn.classList.add('active');
+                        // Clear all existing tech sections
+                        results.innerHTML = '';
+                        showLoading(); setBusy(true);
+                        fetch('/tecnologia_inline', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) })
+                        .then(function(r){ return r.json(); })
+                        .then(function(j){
+                            var res = j.resultados || {};
+                            var keys = Object.keys(res);
+                            if(keys.length === 0){ results.innerHTML = '<p style="margin:0">No se encontraron datos.</p>'; }
+                            else{
+                                var frag = document.createDocumentFragment();
+                                keys.forEach(function(title){
+                                    var section = document.createElement('div'); section.className='result-section';
+                                    // When listing ALL, keep all headings; no suppression here
+                                    var h = document.createElement('h3'); h.textContent = title; section.appendChild(h);
+                                    var wrap = document.createElement('div'); wrap.className='results-wrap'; wrap.innerHTML = res[title]; section.appendChild(wrap);
+                                    frag.appendChild(section);
+                                });
+                                results.appendChild(frag);
+                            }
+                        })
+                        .catch(function(e){ console.error(e); results.innerHTML = '<p style="margin:0;color:#9b1c1c">Error cargando resultados.</p>'; })
+                        .finally(function(){ hideLoading(); setBusy(false); });
+                        return;
+                    }
+
+                    // If ALL currently active and selecting a specific tecnología, deactivate ALL and clear full results
+                    if(allBtn && allBtn.classList.contains('active')){
+                        allBtn.classList.remove('active');
+                        results.innerHTML = '';
+                    }
+
+                    // Toggle selection for individual technologies
+                    var existing = Array.from(results.querySelectorAll('[data-section-key]')).find(function(el){ return el.getAttribute('data-section-key') === key; });
+                    if(btn && btn.classList.contains('active')){
+                        // de-select: remove section
+                        btn.classList.remove('active');
+                        if(existing){ existing.remove(); }
+                        // if no sections left, show a subtle hint
+                        if(!results.querySelector('[data-section-key]')){
+                            results.innerHTML = '<p style="margin:0;color:#324e63">Selecciona una tecnología para ver sus tablas aquí.</p>';
+                        }
+                        // hide any loading overlay just in case one was left visible
+                        try{ var ov=document.getElementById('loading-overlay'); if(ov){ ov.classList.remove('visible'); ov.setAttribute('aria-hidden','true'); } }catch(e){}
+                        return;
+                    }
+
+                    // selecting new tech: add active and fetch + append
+                    if(btn) btn.classList.add('active');
+                    // remove placeholder text if present
+                    if(results.children.length === 1 && results.firstElementChild && results.firstElementChild.tagName === 'P'){
+                        results.innerHTML = '';
+                    }
+                    showLoading(); setBusy(true);
+                    fetch('/tecnologia_inline', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) })
+                    .then(function(r){ return r.json(); })
+                    .then(function(j){
+                        var res = j.resultados || {};
+                        var keys = Object.keys(res);
+                        if(keys.length === 0){
+                            // revert active if nothing to show
+                            if(btn) btn.classList.remove('active');
+                            if(!results.querySelector('[data-section-key]')){
+                                results.innerHTML = '<p style="margin:0">No se encontraron datos.</p>';
+                            }
+                            return;
+                        }
+                        // container for this technology (group multiple tables under one header)
+                        var container = document.createElement('div');
+                        container.className = 'tech-section';
+                        container.setAttribute('data-section-key', key);
+                        var h2 = document.createElement('h2'); h2.textContent = payload.tecnologia; container.appendChild(h2);
+                        keys.forEach(function(title){
+                            var section = document.createElement('div'); section.className='result-section';
+                            // Avoid duplicate heading: if single key equals technology name, omit h3
+                            var shouldShowSub = !(keys.length === 1 && title === payload.tecnologia);
+                            if(shouldShowSub){
+                                var h = document.createElement('h3'); h.textContent = title; section.appendChild(h);
+                            }
+                            var wrap = document.createElement('div'); wrap.className='results-wrap'; wrap.innerHTML = res[title]; section.appendChild(wrap);
+                            container.appendChild(section);
+                        });
+                        results.appendChild(container);
+                    })
+                    .catch(function(e){ console.error(e); })
+                    .finally(function(){ hideLoading(); setBusy(false); });
+                });
+            });
+        }
+        bind();
+    })();
+    </script>
+</body>
+    {% include '_site_footer.html' %}
+</html>
