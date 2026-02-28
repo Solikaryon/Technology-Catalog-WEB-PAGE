@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="search_title">Buscador de Tecnologías</title>
+    <script>(function(){try{if(localStorage.getItem('theme-pref')==='dark')document.documentElement.className='dark-mode';}catch(e){}})();</script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% set back_url = '/' %}
+    {% set show_back = True %}
+    {% include '_site_header.html' %}
+    <h1 data-i18n="independent_search">Buscador independiente</h1>
+    <!-- Loading overlay reused from index -->
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="loading-box">
+            <div class="spinner" aria-hidden="true"></div>
+            <div class="loading-text" data-i18n="loading">Buscando...</div>
+        </div>
+    </div>
+
+    <form method="POST" action="/search" class="show-loading" id="search-form">
+        <fieldset>
+            <legend data-i18n="pcb_min_size">PCB Min Size (X / Y)</legend>
+            <label>PCB Min Size X: <input type="number" step="any" name="pcb_min_x" value="{{ query.pcb_min_x if query }}"></label>
+            <label>PCB Min Size Y: <input type="number" step="any" name="pcb_min_y" value="{{ query.pcb_min_y if query }}"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend data-i18n="pcb_max_size">PCB Max Size (X / Y)</legend>
+            <label>PCB Max Size X: <input type="number" step="any" name="pcb_max_x" value="{{ query.pcb_max_x if query }}"></label>
+            <label>PCB Max Size Y: <input type="number" step="any" name="pcb_max_y" value="{{ query.pcb_max_y if query }}"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend data-i18n="pcb_thickness">PCB Thickness (opcional)</legend>
+            <label>Thickness Min: <input type="number" step="any" name="thickness_min" value="{{ query.thickness_min if query }}"></label>
+            <label>Thickness Max: <input type="number" step="any" name="thickness_max" value="{{ query.thickness_max if query }}"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend data-i18n="pcb_weight">PCB Weight (opcional)</legend>
+            <label>Weight Min: <input type="number" step="any" name="weight_min" value="{{ query.weight_min if query }}"></label>
+            <label>Weight Max: <input type="number" step="any" name="weight_max" value="{{ query.weight_max if query }}"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend data-i18n="additional_filters">Filtros adicionales</legend>
+            <label>Tecnología:
+                <select name="tecnologia" id="search-tec">
+                    <option value="" data-i18n="all_filters">-- Todas --</option>
+                    {% for t in tecnologias_options %}
+                        <option value="{{ t }}" {% if query and query.tecnologia==t %}selected{% endif %}>{{ t }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label>Documento:
+                <select name="documento" id="search-doc">
+                    <option value="" data-i18n="any_filters">-- Cualquiera --</option>
+                    {% for d in documentos_options %}
+                        <option value="{{ d }}" {% if query and query.documento==d %}selected{% endif %}>{{ d }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </fieldset>
+
+        <button type="submit" class="primary-search-btn" data-i18n="search">Buscar</button>
+        <button type="button" id="build-proposal-btn" class="primary-search-btn" style="margin-left:12px" data-i18n="build_proposal">Armar propuesta</button>
+        <button type="button" id="clear-filters-btn" class="primary-search-btn" style="margin-left:12px" data-i18n="clear_filters">Limpiar filtros</button>
+        <button type="button" id="reset-col-widths" class="primary-search-btn" style="margin-left:12px" data-i18n="reset_col_widths" title="Restablecer anchos de columnas">Restablecer anchos</button>
+    </form>
+
+    {% if resultados is not none %}
+        <h2 data-i18n="results">Resultados</h2>
+        {% if resultados %}
+            {% for tabla, html in resultados.items() %}
+                <h3>{{ tabla }}</h3>
+                <div class="tabla-container">{{ html|safe }}</div>
+            {% endfor %}
+        {% else %}
+            <p data-i18n="no_matches">No se encontraron coincidencias.</p>
+        {% endif %}
+    {% endif %}
+
+    {% if proposals is defined %}
+        <h2 data-i18n="proposals">Propuestas compatibles</h2>
+        {% if proposals %}
+            <div class="proposals-row">
+            {% for p in proposals %}
+                <div class="proposal-card">
+                    <h3>{{ p.title }}</h3>
+                    <div class="tabla-container">{{ p.html|safe }}</div>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <p data-i18n="no_matches">Ningun proposal compatible.</p>
+        {% endif %}
+    {% endif %}
+
+</body>
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/proposal_builder.js') }}"></script>
+    <script>
+    // Ensure overlay shows instantly on submit (loading.js adds listener too for .show-loading forms)
+    (function(){
+        var f = document.getElementById('search-form');
+        if(!f) return;
+        f.addEventListener('submit', function(){
+            var ov = document.getElementById('loading-overlay');
+            if(ov){ ov.classList.add('visible'); ov.setAttribute('aria-hidden','false'); }
+        });
+        // Optional: show overlay when clicking build proposal if it triggers async work later
+        var b = document.getElementById('build-proposal-btn');
+        if(b){ b.addEventListener('click', function(){
+            var ov = document.getElementById('loading-overlay');
+            if(ov){ ov.classList.add('visible'); ov.setAttribute('aria-hidden','false'); }
+            // You can replace this timeout with actual async logic.
+            setTimeout(function(){ ov && ov.classList.remove('visible'); ov && ov.setAttribute('aria-hidden','true'); }, 1500);
+        }); }
+        // Clear filters: empties all inputs/selects and resets dependent Documento list
+        var c = document.getElementById('clear-filters-btn');
+        if(c){ c.addEventListener('click', function(){
+            // clear numeric/text inputs
+            Array.prototype.forEach.call(f.querySelectorAll('input[type="number"], input[type="text"]'), function(el){ el.value=''; });
+            // reset selects
+            var tec = document.getElementById('search-tec');
+            var doc = document.getElementById('search-doc');
+            if(tec){ tec.value=''; try{ tec.dispatchEvent(new Event('change')); }catch(e){} }
+            if(doc){ doc.innerHTML = ''; var base=document.createElement('option'); base.value=''; base.textContent='-- Cualquiera --'; doc.appendChild(base); doc.value=''; }
+            // optionally scroll to top of form
+            try{ f.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){}
+        }); }
+    })();
+    </script>
+        <script>
+        // Reset column widths for tables on this page (same behavior as index)
+        (function(){
+            function setUniformWidths(px){
+                var tables = document.querySelectorAll('table');
+                tables.forEach(function(tbl){
+                    try{
+                        var ths = tbl.querySelectorAll('th');
+                        if(ths && ths.length){
+                            ths.forEach(function(th){ th.style.width = px; });
+                        } else {
+                            var first = tbl.querySelector('tr');
+                            if(first){
+                                var cells = first.querySelectorAll('td');
+                                cells.forEach(function(c){ c.style.width = px; });
+                            }
+                        }
+                        tbl.querySelectorAll('tr').forEach(function(r){
+                            r.querySelectorAll('td').forEach(function(td){ td.style.width = px; });
+                        });
+                    }catch(e){}
+                });
+            }
+            var btn = document.getElementById('reset-col-widths');
+            if(btn){ btn.addEventListener('click', function(){ setUniformWidths('220px'); }); }
+        })();
+        </script>
+    <script>
+    // Filter Documento options based on selected Tecnología via backend mapping
+    (function(){
+        var tec = document.getElementById('search-tec');
+        var doc = document.getElementById('search-doc');
+        if(!tec || !doc) return;
+        function refreshDocs(){
+            var tech = tec.value || '';
+            var url = '/documents_for_technology' + (tech ? ('?tech=' + encodeURIComponent(tech)) : '');
+            fetch(url).then(function(r){ return r.json(); }).then(function(j){
+                var list = Array.isArray(j && j.documents) ? j.documents : [];
+                var prev = doc.value;
+                // rebuild options (keep design by using native <option>)
+                doc.innerHTML = '';
+                var base = document.createElement('option'); base.value = ''; base.textContent = '-- Cualquiera --'; doc.appendChild(base);
+                list.forEach(function(d){ var o=document.createElement('option'); o.value=d; o.textContent=d; doc.appendChild(o); });
+                if(prev && list.indexOf(prev) !== -1){ doc.value = prev; } else { doc.value = ''; }
+            }).catch(function(err){ console.error('docs_for_tech:', err); });
+        }
+        tec.addEventListener('change', refreshDocs);
+        // On initial load, if a tecnología is already selected, normalize docs list
+        if(tec.value){ refreshDocs(); }
+    })();
+    </script>
+    {% include '_site_footer.html' %}
+</html>

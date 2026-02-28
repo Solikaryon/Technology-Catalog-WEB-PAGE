@@ -1,0 +1,43 @@
+<div class="site-header" role="banner">
+  <div class="header-left">
+    {% if back_url is defined or show_back %}
+      <a href="{{ back_url if back_url is defined else '/' }}" class="btn back-btn">⬅ <span data-i18n="back">Volver</span></a>
+    {% endif %}
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="/" class="site-logo-link" title="Ir al inicio">
+      <img src="{{ url_for('static', filename='img/Jabil.svg') }}" alt="Jabil" class="site-logo" loading="eager">
+    </a>
+  </div>
+  <!-- Mid header actions (placed between logo and right-most controls) -->
+  <div class="header-mid" aria-label="Accesos rápidos">
+    <a class="header-action action-onedrive" data-label="OneDrive" href="https://jabil.sharepoint.com/sites/ingenieria/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=tQBJwF&CID=752f5095%2Dd39d%2D478c%2Da042%2Dd719f7b0f40a&FolderCTID=0x0120004008A4B65F086145A92E14A0D04CD9E7&id=%2Fsites%2Fingenieria%2FShared%20Documents%2FMaterial%20Didactico%2FVideos%2FProgramacion%20SMT%2F%2D1%2E0%20Programacion%2FManuales" target="_blank" rel="noopener noreferrer" title="Abrir OneDrive">
+      <img src="{{ url_for('static', filename='img/OneDrive.svg') }}" alt="OneDrive" class="header-action-img" loading="eager">
+    </a>
+    <a class="header-action action-fuji" data-label="Fuji" href="http://mxgdlm0nxapp03/fujiweb/fujimoni/UI/FloorMonitor.aspx" target="_blank" rel="noopener noreferrer" title="Abrir Fuji Floor Monitor">
+      <img src="{{ url_for('static', filename='img/FujiLogo.png') }}" alt="Fuji" class="header-action-img" loading="eager">
+    </a>
+    <a class="header-action action-meteam" data-label="ME Team" href="http://awuea1gdlweb41/MEKPIsPortal/main/Home" target="_blank" rel="noopener noreferrer" title="Abrir ME Team KPIs">
+      <img src="{{ url_for('static', filename='img/METeam.png') }}" alt="ME Team" class="header-action-img" loading="eager">
+    </a>
+    <a class="header-action action-powerbi" data-label="Power BI" href="https://app.powerbi.com/groups/615419cb-17e0-4501-a354-39ed7f188212/reports/352eeb43-bf31-4d42-a081-1ce88892b9dd/cbb0d31ed3303343510a?ctid=bc876b21-f134-4c12-a265-8ed26b7f0f3b&experience=power-bi" target="_blank" rel="noopener noreferrer" title="Abrir Power BI">
+      <img src="{{ url_for('static', filename='img/PowerBI.svg') }}" alt="Power BI" class="header-action-img" loading="eager">
+    </a>
+  </div>
+  <div class="header-actions" aria-label="Controles de cabecera">
+    <!-- Theme toggle placed just left of Jabilito image (keeps other links unchanged) -->
+    <a href="/manual" class="header-action jabilito-link" data-label="Jabilito" title="Manual de Usuario" aria-label="Manual de Usuario">
+      <img src="{{ url_for('static', filename='img/Jabilito.png') }}" alt="Jabilito" class="header-action-img jabilito-img" loading="eager" data-fallback="{{ url_for('static', filename='img/Jabil.svg') }}" onerror="this.onerror=null;this.src=this.dataset.fallback">
+    </a>
+    <!-- Language toggle: MX (español) / US (english) placed between Jabilito and theme -->
+    <button class="lang-toggle-btn header-lang-toggle" aria-label="Cambiar idioma" title="Cambiar idioma" style="margin-right:8px">
+      <span class="lang-icons" style="display:flex;gap:6px;align-items:center; font-size:18px;">
+        <span class="lang-mx" title="Español">🇲🇽</span>
+        <span class="lang-us" title="English">🇺🇸</span>
+      </span>
+    </button>
+    <button class="theme-toggle-btn header-theme-toggle header-theme-right" aria-label="Cambiar tema" title="Cambiar tema" style="margin-right:8px">
+      <span class="icon-wrap"><span class="sun">☀️</span><span class="moon">🌔</span></span>
+    </button>
+  </div>
+</div>

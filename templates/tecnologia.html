@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ tecnologia }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% set back_url = '/' %}
+    {% set show_back = True %}
+    {% include '_site_header.html' %}
+    <h1>{{ tecnologia }}</h1>
+    <h3>Documento: {{ documento }}</h3>
+
+    {% for tabla, html in resultados.items() %}
+        {# Evitar duplicar el nombre: si coincide con el título principal no mostrar segundo heading #}
+        {% if tabla != tecnologia %}
+        <div class="tabla-container">{{ html|safe }}</div>
+    {% else %}
+        <p>No se encontraron datos para esta tecnología.</p>
+    {% endfor %}
+</body>
+    {% include '_site_footer.html' %}
+</html>

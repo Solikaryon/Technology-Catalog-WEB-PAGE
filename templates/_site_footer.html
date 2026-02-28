@@ -1,0 +1,1250 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-left">Machine Support 2025 | Version de la página: 1.0.1 | Fecha de última actualiación: 12/04/2025</div>
+    <div class="footer-center" aria-hidden="true">
+      <img src="{{ url_for('static', filename='img/Jabil.svg') }}" alt="Jabil" class="footer-logo" loading="lazy">
+    </div>
+    <div class="footer-right">
+      <b><span class="footer-contact-label">Contact:</span></b>
+      <span class="footer-contact-group">
+        <span class="footer-mail-icon" aria-hidden="true"></span>
+        <a>Machine Support B1 GDL</a>
+        <span class="footer-sep">|</span>
+        <a href="mailto:Luis_Monjaraz@Jabil.com" class="footer-mail">✉️ Luis_Monjaraz@Jabil.com</a>
+        <span class="footer-sep">|</span>
+        <a href="mailto:Jesus_Zarate@Jabil.com" class="footer-mail">✉️ Jesus_Zarate@Jabil.com</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Quick Launch Menu -->
+<div class="quick-launch" id="quick-launch" aria-label="Accesos rápidos flotantes">
+  <div class="quick-launch-icons" aria-hidden="true">
+    <a class="ql-icon action-onedrive" data-label="OneDrive" href="https://jabil.sharepoint.com/sites/ingenieria/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=tQBJwF&CID=752f5095%2Dd39d%2D478c%2Da042%2Dd719f7b0f40a&FolderCTID=0x0120004008A4B65F086145A92E14A0D04CD9E7&id=%2Fsites%2Fingenieria%2FShared%20Documents%2FMaterial%20Didactico%2FVideos%2FProgramacion%20SMT%2F%2D1%2E0%20Programacion%2FManuales" target="_blank" rel="noopener noreferrer" title="Abrir OneDrive">
+      <img src="{{ url_for('static', filename='img/OneDrive.svg') }}" alt="OneDrive" loading="lazy">
+    </a>
+    <a class="ql-icon action-fuji" data-label="Fuji" href="http://mxgdlm0nxapp03/fujiweb/fujimoni/UI/FloorMonitor.aspx" target="_blank" rel="noopener noreferrer" title="Abrir Fuji Floor Monitor">
+      <img src="{{ url_for('static', filename='img/FujiLogo.png') }}" alt="Fuji" loading="lazy">
+    </a>
+    <a class="ql-icon action-meteam" data-label="ME Team" href="http://awuea1gdlweb41/MEKPIsPortal/main/Home" target="_blank" rel="noopener noreferrer" title="Abrir ME Team KPIs">
+      <img src="{{ url_for('static', filename='img/METeam.png') }}" alt="ME Team" loading="lazy">
+    </a>
+    <a class="ql-icon action-powerbi" data-label="Power BI" href="https://app.powerbi.com/groups/615419cb-17e0-4501-a354-39ed7f188212/reports/352eeb43-bf31-4d42-a081-1ce88892b9dd/cbb0d31ed3303343510a?ctid=bc876b21-f134-4c12-a265-8ed26b7f0f3b&experience=power-bi" target="_blank" rel="noopener noreferrer" title="Abrir Power BI">
+      <img src="{{ url_for('static', filename='img/PowerBI.svg') }}" alt="Power BI" loading="lazy">
+    </a>
+    <a class="ql-icon action-jabilito" data-label="Jabilito" href="/manual" title="Manual de Usuario" aria-label="Manual de Usuario">
+      <img src="{{ url_for('static', filename='img/Jabilito.png') }}" alt="Jabilito" loading="lazy" data-fallback="{{ url_for('static', filename='img/Jabil.svg') }}" onerror="this.onerror=null;this.src=this.dataset.fallback">
+    </a>
+    <!-- Updates / ChangeLog -->
+    <a class="ql-icon action-updates" data-label="Updates" href="#" title="Updates" aria-haspopup="true" aria-expanded="false">
+      <img src="{{ url_for('static', filename='img/Updates.svg') }}" alt="Updates" loading="lazy" data-fallback="{{ url_for('static', filename='img/placeholder.svg') }}" onerror="this.onerror=null;this.src=this.dataset.fallback">
+      <div class="updates-popup" role="dialog" aria-label="Change Log" aria-hidden="true">
+        <h4 data-i18n="changelog_title">Change Log</h4>
+        <ul class="changelog-list">
+          <li data-i18n="changelog_1_0_1">1.0.1 — Se agrego el ChangeLog de actualizaciones en el menu desplegable</li>
+          <li data-i18n="changelog_1_0_0">1.0.0 — Primera version funcional en ejecutable</li>
+          <li data-i18n="changelog_0_9_9">0.9.9 — Se corrigio un bug relacionado a la busqueda de tecnologia</li>
+          <li data-i18n="changelog_0_9_8">0.9.8 — Se agregaron pruebas en el manual de uso para que el usuario se familiarice con el uso</li>
+          <li data-i18n="changelog_0_9_7">0.9.7 — Se agrego un manual de uso para el usuario</li>
+          <li data-i18n="changelog_0_9_6">0.9.6 — Se agrego la pestaña Documentación</li>
+          <li data-i18n="changelog_0_9_5">0.9.5 — Se corriguio un bug relacionado al texto en ingles</li>
+          <li data-i18n="changelog_0_9_4">0.9.4 — Se corrigio un bug relacionado a las imagenes de propuestas</li>
+          <li data-i18n="changelog_0_9_3">0.9.3 — Se normalizo el ancho de columnas y texto</li>
+          <li data-i18n="changelog_0_9_2">0.9.2 — Se agrego la caracteristica de modificar anchura de tablas</li>
+          <li data-i18n="changelog_0_9_1">0.9.1 — Se corrigio un bug en la pestaña de armar propuestas</li>
+          <li data-i18n="changelog_0_9_0">0.9.0 — Se agregaron diversas funciones para la comodidad del usuario</li>
+          <li data-i18n="changelog_0_8_0">0.8.0 — Se agrego el idioma ingles</li>
+          <li data-i18n="changelog_0_7_0">0.7.0 — Se agrego informacion detallada en las propuestas</li>
+          <li data-i18n="changelog_0_6_0">0.6.0 — Se agrego Jabilito en el cambiar de tema</li>
+          <li data-i18n="changelog_0_5_0">0.5.0 — Se agregaron hipervínculos a diferentes sitios</li>
+          <li data-i18n="changelog_0_4_0">0.4.0 — Se agrego la pestaña admin</li>
+          <li data-i18n="changelog_0_3_0">0.3.0 — Se agrego el visualizador de tecnologías</li>
+          <li data-i18n="changelog_0_2_0">0.2.0 — Se agrego el buscador avanzado de tecnologías</li>
+          <li data-i18n="changelog_0_1_0">0.1.0 — Estructura base del programa</li>
+        </ul>
+      </div>
+    </a>
+    <!-- Theme toggle placed inside quick-launch icons (to the right of Power BI) -->
+    <button class="ql-icon theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">
+      <span class="icon-wrap"><span class="sun">☀️</span><span class="moon">🌔</span></span>
+    </button>
+  </div>
+  <button class="quick-launch-btn" id="quick-launch-btn" aria-expanded="false" aria-controls="quick-launch" title="Mostrar accesos rápidos">☰</button>
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('quick-launch');
+  if(!root) return;
+  var btn = document.getElementById('quick-launch-btn');
+  var iconsWrap = root.querySelector('.quick-launch-icons');
+  function toggle(){
+    var open = root.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    iconsWrap.setAttribute('aria-hidden', open ? 'false' : 'true');
+  }
+  btn.addEventListener('click', toggle);
+  // close when clicking outside
+  document.addEventListener('click', function(e){
+    if(!root.classList.contains('open')) return;
+    if(root.contains(e.target)) return;
+    root.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    iconsWrap.setAttribute('aria-hidden','true');
+  });
+  // keyboard accessibility (Esc)
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && root.classList.contains('open')){
+      root.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      iconsWrap.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+<script>
+// Toggle the Updates changelog popup on click (mobile-friendly)
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', fn); else fn(); }
+  ready(function(){
+    var updates = document.querySelector('.ql-icon.action-updates');
+    if(!updates) return;
+    var popup = updates.querySelector('.updates-popup');
+    if(!popup) return;
+
+    function openPopup(){
+      updates.setAttribute('aria-expanded','true');
+      popup.setAttribute('aria-hidden','false');
+      popup.classList.add('open');
+    }
+    function closePopup(){
+      updates.setAttribute('aria-expanded','false');
+      popup.setAttribute('aria-hidden','true');
+      popup.classList.remove('open');
+    }
+
+    updates.addEventListener('click', function(e){
+      // allow the quick-launch menu to toggle when clicking the icon, but prevent page jump
+      e.preventDefault();
+      e.stopPropagation();
+      if(updates.getAttribute('aria-expanded') === 'true') closePopup(); else openPopup();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function(e){
+      if(!updates.contains(e.target)) closePopup();
+    }, { passive: true });
+
+    // Close on Esc
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePopup(); });
+  });
+})();
+</script>
+<script>
+// Adjust quick-launch position when footer is visible so the button doesn't overlap
+(function(){
+  var ql = document.getElementById('quick-launch');
+  var footer = document.querySelector('.site-footer');
+  if(!ql || !footer) return;
+
+  var defaultBottom = parseInt(getComputedStyle(ql).bottom, 10) || 28;
+  var gap = 8; // gap between quick-launch and footer when footer visible
+
+  var scheduled = null;
+  function adjust(){
+    if(scheduled) return;
+    scheduled = requestAnimationFrame(function(){
+      scheduled = null;
+      try{
+        var fRect = footer.getBoundingClientRect();
+        // If footer top is inside viewport (visible at least partly)
+        if(fRect.top < window.innerHeight){
+          var overlap = window.innerHeight - fRect.top; // px footer occupies from bottom
+          ql.style.bottom = (overlap + gap) + 'px';
+        } else {
+          ql.style.bottom = defaultBottom + 'px';
+        }
+      }catch(e){ ql.style.bottom = defaultBottom + 'px'; }
+    });
+  }
+
+  window.addEventListener('scroll', adjust, { passive: true });
+  window.addEventListener('resize', adjust);
+  document.addEventListener('DOMContentLoaded', adjust);
+  // initial call
+  setTimeout(adjust, 60);
+})();
+</script>
+<script>
+// Global theme toggle (supports multiple .theme-toggle-btn elements)
+(function(){
+  var root = document.body;
+  try {
+    var pref = localStorage.getItem('theme-pref');
+    if(pref === 'dark'){ root.classList.add('dark-mode'); }
+  } catch(e){}
+  function onClick(){
+    // Disable transitions briefly to avoid repaint jank on large pages
+    var docEl = document.documentElement;
+    docEl.classList.add('no-theme-transitions');
+    // Show global loading overlay while theme is flipping to avoid flicker
+    var overlay = document.getElementById('loading-overlay');
+    if(overlay){ overlay.classList.add('visible'); overlay.setAttribute('aria-hidden','false'); }
+    // Toggle theme on next frame to ensure class is applied first
+    requestAnimationFrame(function(){
+      var isDark = root.classList.toggle('dark-mode');
+      try { localStorage.setItem('theme-pref', isDark ? 'dark' : 'light'); } catch(e){}
+      // Remove sentinel shortly after to restore normal animations
+      setTimeout(function(){ 
+        docEl.classList.remove('no-theme-transitions');
+        // Wait a couple frames to ensure repaint/layout finished, then hide overlay
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){ 
+          if(overlay){ overlay.classList.remove('visible'); overlay.setAttribute('aria-hidden','true'); }
+        }); });
+      }, 80);
+    });
+  }
+  document.querySelectorAll('.theme-toggle-btn').forEach(function(btn){
+    btn.addEventListener('click', onClick);
+  });
+})();
+</script>
+<script>
+// Global language toggle: prefer data-i18n keys, fallback to text->text mapping
+(function(){
+  var LANG_KEY = 'lang-pref';
+
+  // Keyed translations (recommended). Add keys for most UI strings here.
+  var translationsByKey = {
+    'back': { es: 'Volver', en: 'Back' },
+    'technologies': { es: 'Tecnologías', en: 'Technologies' },
+    'catalog_title': { es: 'Catálogo de Tecnologías', en: 'Technology Catalog' },
+    'select_technology': { es: 'Selecciona una Tecnología', en: 'Select a Technology' },
+    'hero_paragraph': { es: 'Explora documentos y tablas asociadas por tecnología. Usa el panel para ver todas o filtrar por familia.', en: 'Explore documents and tables by technology. Use the panel to view all or filter by family.' },
+    'results': { es: 'Resultados', en: 'Results' },
+    'select_tech_placeholder': { es: 'Selecciona una tecnología para ver sus tablas aquí.', en: 'Select a technology to show its tables here.' },
+    'all_technologies': { es: 'Todas las Tecnologías', en: 'All Technologies' },
+    'search_and_build': { es: 'Buscar y crear propuestas', en: 'Search and build proposals' },
+    'view_proposals': { es: 'Visualizar Propuestas', en: 'View Proposals' },
+    'documentation': { es: 'Documentación', en: 'Documentation' },
+    'loading': { es: 'Cargando...', en: 'Loading...' },
+    'pcb_min_size': { es: 'PCB Min Size (X / Y)', en: 'PCB Min Size (X / Y)' },
+    'pcb_max_size': { es: 'PCB Max Size (X / Y)', en: 'PCB Max Size (X / Y)' },
+    'pcb_thickness': { es: 'PCB Thickness (opcional)', en: 'PCB Thickness (optional)' },
+    'pcb_weight': { es: 'PCB Weight (opcional)', en: 'PCB Weight (optional)' },
+    'additional_filters': { es: 'Filtros adicionales', en: 'Additional filters' },
+    'all_filters': { es: '-- Todas --', en: '-- All --' },
+    'any_filters': { es: '-- Cualquiera --', en: '-- Any --' },
+    'search': { es: 'Buscar', en: 'Search' },
+    'search_title': { es: 'Buscador de Tecnologías', en: 'Technology Search' },
+    'independent_search': { es: 'Buscador independiente', en: 'Independent Search' },
+    'build_proposal': { es: 'Armar propuesta', en: 'Build proposal' },
+    'clear_filters': { es: 'Limpiar filtros', en: 'Clear filters' },
+    'filter_label': { es: 'Filtrar tecnologías...', en: 'Filter technologies...' },
+    'filter_placeholder': { es: 'Filtrar tecnologías...', en: 'Filter technologies...' },
+    'no_matches': { es: 'No se encontraron coincidencias.', en: 'No matches found.' },
+    'reset_col_widths': { es: 'Restablecer anchos de columnas', en: 'Reset column widths' },
+    'proposals': { es: 'Propuestas', en: 'Proposals' },
+    'details': { es: 'Detalle', en: 'Details' },
+    'save': { es: 'Guardar', en: 'Save' },
+    'cancel': { es: 'Cancelar', en: 'Cancel' },
+    'close': { es: 'Cerrar', en: 'Close' }
+  };
+
+  // Additional keys for documentation/admin/proposal builder
+  translationsByKey['documentation_title'] = { es: 'Documentación de Tecnologías', en: 'Technologies Documentation' };
+  translationsByKey['documentation_hero_p'] = { es: 'Documentación. Use el botón de cada fila para ir al enlace asociado.', en: 'Documentation. Use each row button to go to the associated link.' };
+  translationsByKey['open_link'] = { es: 'Abrir Enlace', en: 'Open Link' };
+  translationsByKey['no_link'] = { es: 'Sin enlace', en: 'No link' };
+  translationsByKey['view_related_entries'] = { es: 'Ver entradas relacionadas', en: 'View related entries' };
+  translationsByKey['no_entries_table'] = { es: 'No hay entradas en la tabla', en: 'No entries in table' };
+
+  translationsByKey['admin_title'] = { es: 'Administración - Editar Base de Datos', en: 'Admin - Edit Database' };
+  translationsByKey['admin_select_table_msg'] = { es: 'Seleccione una tabla para ver filas (limitado a 500 filas por tabla).', en: 'Select a table to view rows (limited to 500 rows per table).' };
+  translationsByKey['new_table'] = { es: '➕ Nueva tabla', en: '➕ New table' };
+  translationsByKey['export_all_excel'] = { es: '💾 Exportar todas (Excel)', en: '💾 Export all (Excel)' };
+  translationsByKey['technology_label'] = { es: 'Tecnología:', en: 'Technology:' };
+  translationsByKey['proposals_user_label'] = { es: 'Proposals (Usuario):', en: 'Proposals (User):' };
+  translationsByKey['all_users'] = { es: 'Todos', en: 'All' };
+
+  // Proposal builder keys
+  translationsByKey['preview_proposal_float'] = { es: 'Preview propuesta ({n})', en: 'Preview proposal ({n})' };
+  translationsByKey['preview_modal_title'] = { es: 'Previsualizar propuesta', en: 'Preview proposal' };
+  translationsByKey['preview_modal_desc'] = { es: 'Vista previa (sin costos). Asigne un nombre para guardar.', en: 'Preview (no costs). Assign a name to save.' };
+  translationsByKey['proposal_name_placeholder'] = { es: 'Nombre descriptivo', en: 'Descriptive name' };
+  translationsByKey['cancel'] = { es: 'Cancelar', en: 'Cancel' };
+  translationsByKey['export_excel'] = { es: 'Guardar Excel', en: 'Export Excel' };
+  translationsByKey['save_db'] = { es: 'Guardar Base de datos', en: 'Save to Database' };
+  translationsByKey['cancel_proposal'] = { es: 'Cancelar propuesta', en: 'Cancel proposal' };
+
+  // Auth / admin additional keys
+  translationsByKey['auth_title'] = { es: 'Inicia sesión para guardar la propuesta', en: 'Sign in to save the proposal' };
+  translationsByKey['auth_login'] = { es: 'Iniciar sesión', en: 'Sign in' };
+  translationsByKey['auth_create'] = { es: 'Crear cuenta', en: 'Create account' };
+  translationsByKey['auth_user'] = { es: 'Usuario:', en: 'User:' };
+  translationsByKey['auth_pass'] = { es: 'Contraseña:', en: 'Password:' };
+  translationsByKey['apply_filters'] = { es: 'Aplicar filtros', en: 'Apply filters' };
+
+  // Manual de Usuario keys
+  translationsByKey['manual_title'] = { es: 'Manual de Usuario', en: 'User Manual' };
+  translationsByKey['manual_subtitle'] = { es: 'Guía completa para utilizar el Catálogo de Tecnologías', en: 'Complete guide to use the Technology Catalog' };
+  translationsByKey['quick_nav'] = { es: 'Navegación Rápida', en: 'Quick Navigation' };
+  translationsByKey['quick_nav_desc'] = { es: 'Accede directamente a cada sección:', en: 'Access each section directly:' };
+  translationsByKey['main_page'] = { es: 'Página Principal', en: 'Main Page' };
+  translationsByKey['search_build_props'] = { es: 'Buscar y Armar Propuestas', en: 'Search and Build Proposals' };
+  translationsByKey['view_props'] = { es: 'Visualizar Propuestas', en: 'View Proposals' };
+  translationsByKey['admin'] = { es: 'Administración', en: 'Administration' };
+  translationsByKey['global_features'] = { es: 'Características Globales', en: 'Global Features' };
+  translationsByKey['what_does'] = { es: '¿Qué hace?', en: 'What does it do?' };
+  translationsByKey['main_features'] = { es: 'Características principales:', en: 'Main features:' };
+  translationsByKey['test_safe'] = { es: 'Cómo probar sin afectar datos:', en: 'How to test without affecting data:' };
+  translationsByKey['safe_tests'] = { es: 'Pruebas seguras:', en: 'Safe tests:' };
+  translationsByKey['not_recommended'] = { es: 'NO recomendado para pruebas:', en: 'NOT recommended for testing:' };
+  translationsByKey['interactive_demo'] = { es: 'Demo Interactiva (sin conexión a base de datos):', en: 'Interactive Demo (no database connection):' };
+  translationsByKey['route'] = { es: 'Ruta:', en: 'Route:' };
+  translationsByKey['root'] = { es: 'raíz', en: 'root' };
+  translationsByKey['keyboard_shortcuts'] = { es: 'Atajos de Teclado', en: 'Keyboard Shortcuts' };
+  translationsByKey['tips_practices'] = { es: 'Consejos y Buenas Prácticas', en: 'Tips and Best Practices' };
+  translationsByKey['support_contact'] = { es: 'Soporte y Contacto', en: 'Support and Contact' };
+  translationsByKey['important_note'] = { es: 'Nota importante:', en: 'Important note:' };
+  translationsByKey['demo_data_disclaimer'] = { es: 'Los datos mostrados en este manual son únicamente representativos y con fines demostrativos. No reflejan los datos reales de la aplicación.', en: 'The data shown in this manual is for demonstration purposes only. It does not reflect the actual application data.' };
+
+  // Manual - Secciones principales
+  translationsByKey['main_page_catalog'] = { es: 'Página Principal (Catálogo de Tecnologías)', en: 'Main Page (Technology Catalog)' };
+  translationsByKey['search_build_title'] = { es: 'Buscar y Armar Propuestas', en: 'Search and Build Proposals' };
+  translationsByKey['view_proposals_title'] = { es: 'Visualizar Propuestas', en: 'View Proposals' };
+  translationsByKey['documentation_sec'] = { es: 'Documentación', en: 'Documentation' };
+  translationsByKey['administration'] = { es: 'Administración', en: 'Administration' };
+  translationsByKey['global_characteristics'] = { es: 'Características Globales', en: 'Global Features' };
+  translationsByKey['functionalities_all_pages'] = { es: 'Funcionalidades disponibles en todas las páginas:', en: 'Features available on all pages:' };
+
+  // Change Log translations
+  translationsByKey['changelog_title'] = { es: 'Registro de cambios', en: 'Change Log' };
+  translationsByKey['changelog_0_1_0'] = { es: '0.1.0 — Estructura base del programa: inicialización del proyecto, configuración de la aplicación Flask, rutas principales, plantillas y assets estáticos para soportar el Catálogo de Tecnologías.', en: '0.1.0 — Base project scaffold: initialized the Flask application, main routes, templates and static assets to support the Technology Catalog.' };
+  translationsByKey['changelog_0_2_0'] = { es: '0.2.0 — Buscador avanzado: incorporación de filtros numéricos y por tipo (PCB Min/Max, grosor, peso, tecnología) y optimización de la búsqueda en tiempo real.', en: '0.2.0 — Advanced search: added numeric and type filters (PCB Min/Max, thickness, weight, technology) and improved real-time filtering performance.' };
+  translationsByKey['changelog_0_3_0'] = { es: '0.3.0 — Visualizador de tecnologías: nueva vista detallada que muestra tablas por tecnología, con paginación ligera y herramientas de navegación entre tablas relacionadas.', en: '0.3.0 — Technology viewer: added detailed views showing per-technology tables, light pagination and navigation between related tables.' };
+  translationsByKey['changelog_0_4_0'] = { es: '0.4.0 — Pestaña Admin: panel para administración básica de la BD (visualizar tablas, editar celdas, exportar), con límites para proteger la performance.', en: '0.4.0 — Admin tab: basic database admin panel (view tables, edit cells, export) with safeguards to protect performance.' };
+  translationsByKey['changelog_0_5_0'] = { es: '0.5.0 — Enlaces y accesos rápidos: se añadieron hipervínculos a recursos internos y externos (OneDrive, PowerBI, documentación) y se creó el Quick Launch flotante.', en: '0.5.0 — Links & quick access: added hyperlinks to internal and external resources (OneDrive, Power BI, documentation) and introduced the floating Quick Launch menu.' };
+  translationsByKey['changelog_0_6_0'] = { es: '0.6.0 — Jabilito y tema: se añadió el icono "Jabilito" y se integró el selector de tema (claro/oscuro) con persistencia de preferencia.', en: '0.6.0 — Jabilito & theme: added the "Jabilito" icon and integrated theme toggle (light/dark) with persisted preference.' };
+  translationsByKey['changelog_0_7_0'] = { es: '0.7.0 — Detalle en propuestas: ampliación de la información en la previsualización de propuestas, opciones de exportación y guardado (Excel / Base de datos).', en: '0.7.0 — Proposal details: expanded proposal preview information plus export and save options (Excel / Database).' };
+  translationsByKey['changelog_0_8_0'] = { es: '0.8.0 — Internacionalización inicial: añadido soporte bilingüe (Español / Inglés) y sistema de claves `data-i18n` con fallback para traducciones.', en: '0.8.0 — Initial i18n: added bilingual support (Spanish / English) and a `data-i18n` key system with fallbacks for translations.' };
+  translationsByKey['changelog_0_9_0'] = { es: '0.9.0 — Mejoras UX: múltiples mejoras de interfaz, accesibilidad y ayudas visuales para facilitar el uso diario por parte de los usuarios.', en: '0.9.0 — UX improvements: multiple interface, accessibility and visual helper enhancements to improve daily usability.' };
+  translationsByKey['changelog_0_9_1'] = { es: '0.9.1 — Corrección: solución de un fallo que impedía restaurar correctamente selecciones guardadas en el modo de armar propuestas.', en: '0.9.1 — Bug fix: resolved an issue preventing proper restoration of saved selections in build-proposal mode.' };
+  translationsByKey['changelog_0_9_2'] = { es: '0.9.2 — Columnas redimensionables: añadido soporte para cambiar el ancho de columnas arrastrando el borde de los encabezados y guardando anchos originales para reset.', en: '0.9.2 — Resizable columns: added support for resizing column widths by dragging header edges and storing originals for reset.' };
+  translationsByKey['changelog_0_9_3'] = { es: '0.9.3 — Normalización visual: se ajustaron anchos y comportamiento de texto (truncado/tooltip) para consistencia en todas las tablas.', en: '0.9.3 — Visual normalization: adjusted widths and text behavior (truncation/tooltips) for consistent table rendering.' };
+  translationsByKey['changelog_0_9_4'] = { es: '0.9.4 — Imagenes de propuestas: corrección de errores en la carga/visualización de imágenes asociadas a filas de propuestas.', en: '0.9.4 — Proposal images: fixed issues in loading/displaying images attached to proposal rows.' };
+  translationsByKey['changelog_0_9_5'] = { es: '0.9.5 — Traducciones: corrección de textos en inglés que presentaban fallos o faltantes en el diccionario de fallback.', en: '0.9.5 — Translations: fixed English text issues and missing fallback dictionary entries.' };
+  translationsByKey['changelog_0_9_6'] = { es: '0.9.6 — Pestaña Documentación: nueva sección para enlazar y visualizar documentos técnicos por tecnología.', en: '0.9.6 — Documentation tab: new section to link and preview technical documents per technology.' };
+  translationsByKey['changelog_0_9_7'] = { es: '0.9.7 — Manual de usuario: añadido manual con ejemplos y sección demo para prácticas seguras sin tocar datos reales.', en: '0.9.7 — User manual: added manual with examples and an interactive demo section for safe, read-only practice.' };
+  translationsByKey['changelog_0_9_8'] = { es: '0.9.8 — Pruebas en manual: se incorporaron pruebas y ejemplos que permiten a los usuarios familiarizarse con flujos comunes.', en: '0.9.8 — Manual tests: included sample tests and walkthroughs to help users get familiar with common workflows.' };
+  translationsByKey['changelog_0_9_9'] = { es: '0.9.9 — Corrección búsqueda: solución de un caso límite que afectaba resultados al filtrar por ciertos parámetros.', en: '0.9.9 — Search fix: resolved an edge case affecting search results when filtering by specific parameters.' };
+  translationsByKey['changelog_1_0_0'] = { es: '1.0.0 — Versión funcional: empaquetado como ejecutable independiente (build), con instalador y documentación básica.', en: '1.0.0 — Functional release: packaged as a standalone executable (build) with installer and basic documentation.' };
+  translationsByKey['changelog_1_0_1'] = { es: '1.0.1 — Se añadió el Change Log al menú desplegable y mejoras menores de estabilidad y claridad en la UI.', en: '1.0.1 — Added the Change Log to the dropdown menu plus minor stability and UI clarity improvements.' };
+
+  // Manual - Contenido descriptivo detallado
+  translationsByKey['main_page_desc'] = { es: 'La página principal muestra todas las tecnologías disponibles organizadas por familias. Puedes seleccionar cualquier tecnología para ver sus tablas asociadas con equipos, especificaciones y documentación.', en: 'The main page shows all available technologies organized by families. You can select any technology to view its associated tables with equipment, specifications, and documentation.' };
+  translationsByKey['search_build_desc'] = { es: 'Permite buscar equipos por criterios específicos (tamaños de PCB, espesores, pesos) y armar propuestas seleccionando equipos de los resultados.', en: 'Allows searching for equipment by specific criteria (PCB sizes, thicknesses, weights) and building proposals by selecting equipment from results.' };
+  translationsByKey['view_proposals_desc'] = { es: 'Muestra todas las propuestas guardadas en la base de datos. Puedes ver detalles, exportar a Excel, o eliminar propuestas.', en: 'Shows all saved proposals in the database. You can view details, export to Excel, or delete proposals.' };
+  translationsByKey['documentation_desc'] = { es: 'Muestra enlaces a documentos técnicos organizados por tecnología. Cada entrada puede tener un enlace externo (ej: SharePoint, OneDrive) o mostrar entradas relacionadas.', en: 'Shows links to technical documents organized by technology. Each entry can have an external link (e.g., SharePoint, OneDrive) or show related entries.' };
+  translationsByKey['admin_desc'] = { es: 'Panel de administración para editar directamente las tablas de la base de datos. Permite modificar celdas, crear nuevas tablas y exportar datos.', en: 'Administration panel to directly edit database tables. Allows modifying cells, creating new tables, and exporting data.' };
+
+  // Manual - Features específicos
+  translationsByKey['quick_filter_tech'] = { es: 'Filtro rápido de tecnologías:', en: 'Quick technology filter:' };
+  translationsByKey['tech_selection'] = { es: 'Selección de tecnologías:', en: 'Technology selection:' };
+  translationsByKey['clear_selections_btn'] = { es: 'Botón "Borrar selecciones":', en: '"Clear selections" button:' };
+  translationsByKey['table_visualization'] = { es: 'Visualización de tablas:', en: 'Table visualization:' };
+  translationsByKey['search_filters'] = { es: 'Filtros de búsqueda:', en: 'Search filters:' };
+  translationsByKey['dynamic_filters'] = { es: 'Filtros dinámicos:', en: 'Dynamic filters:' };
+  translationsByKey['build_proposal_mode'] = { es: 'Armar propuesta (modo selección):', en: 'Build proposal (selection mode):' };
+  translationsByKey['preview_save_proposals'] = { es: 'Preview y guardar propuestas:', en: 'Preview and save proposals:' };
+  translationsByKey['restore_selection'] = { es: 'Restaurar selección anterior:', en: 'Restore previous selection:' };
+  translationsByKey['restore_failed_clear'] = { es: 'No se pudo restaurar la selección previa. La selección guardada será eliminada.', en: 'Could not restore previous selection. The saved selection will be cleared.' };
+  translationsByKey['proposals_list'] = { es: 'Lista de propuestas:', en: 'Proposals list:' };
+  translationsByKey['view_details'] = { es: 'Ver detalles:', en: 'View details:' };
+  translationsByKey['export_excel'] = { es: 'Exportar a Excel:', en: 'Export to Excel:' };
+  translationsByKey['documentation_cards'] = { es: 'Tarjetas de documentación:', en: 'Documentation cards:' };
+  translationsByKey['external_links'] = { es: 'Enlaces externos:', en: 'External links:' };
+  translationsByKey['table_selection'] = { es: 'Selección de tabla:', en: 'Table selection:' };
+  translationsByKey['cell_editing'] = { es: 'Edición de celdas:', en: 'Cell editing:' };
+  translationsByKey['create_new_table'] = { es: 'Crear nueva tabla:', en: 'Create new table:' };
+  translationsByKey['export_options'] = { es: 'Exportar:', en: 'Export:' };
+  translationsByKey['dark_light_theme'] = { es: 'Tema Oscuro / Claro:', en: 'Dark / Light Theme:' };
+  translationsByKey['language_change'] = { es: 'Cambio de Idioma (Español / English):', en: 'Language Change (Spanish / English):' };
+  translationsByKey['quick_launch_menu'] = { es: 'Quick Launch (Menú flotante):', en: 'Quick Launch (Floating menu):' };
+  translationsByKey['interactive_tables'] = { es: 'Tablas interactivas:', en: 'Interactive tables:' };
+  translationsByKey['loading_overlay'] = { es: 'Overlay de carga:', en: 'Loading overlay:' };
+  translationsByKey['back_button'] = { es: 'Botón Volver:', en: 'Back button:' };
+  translationsByKey['safe_tests'] = { es: '✅ Pruebas seguras:', en: '✅ Safe tests:' };
+  translationsByKey['how_to_test'] = { es: 'Cómo probar sin afectar datos:', en: 'How to test without affecting data:' };
+  translationsByKey['safe_tests_view_only'] = { es: '✅ Pruebas seguras (solo visualización):', en: '✅ Safe tests (view only):' };
+  translationsByKey['test_select_tables'] = { es: 'Selecciona diferentes tablas del dropdown para ver sus contenidos', en: 'Select different tables from the dropdown to view their contents' };
+  translationsByKey['test_use_filters'] = { es: 'Usa los filtros de Tecnología y Usuario sin guardar cambios', en: 'Use Technology and User filters without saving changes' };
+  translationsByKey['test_export_tables'] = { es: 'Exporta tablas a Excel para revisar offline (no modifica la DB)', en: 'Export tables to Excel for offline review (does not modify DB)' };
+  translationsByKey['not_recommended_tests'] = { es: '⚠️ NO recomendado para pruebas:', en: '⚠️ NOT recommended for testing:' };
+  translationsByKey['test_edit_cells'] = { es: 'Editar celdas (guarda cambios inmediatamente)', en: 'Edit cells (saves changes immediately)' };
+  translationsByKey['test_create_tables'] = { es: 'Crear nuevas tablas', en: 'Create new tables' };
+  translationsByKey['test_delete_tables'] = { es: 'Eliminar tablas', en: 'Delete tables' };
+  translationsByKey['test_dev_env'] = { es: 'Si necesitas probar estas funciones, hazlo en un entorno de desarrollo o con datos de prueba.', en: 'If you need to test these functions, do so in a development environment or with test data.' };
+  translationsByKey['interactive_demo'] = { es: '🧪 Demo Interactiva (sin conexión a base de datos):', en: '🧪 Interactive Demo (no database connection):' };
+  translationsByKey['test_cell_editing'] = { es: 'Prueba la edición de celdas (los cambios NO se guardan):', en: 'Test cell editing (changes are NOT saved):' };
+  translationsByKey['demo_instructions'] = { es: 'Instrucciones: Haz doble clic en cualquier celda para editarla. Presiona Enter para "guardar" o Escape para cancelar.', en: 'Instructions: Double-click any cell to edit it. Press Enter to "save" or Escape to cancel.' };
+  translationsByKey['export_current_table'] = { es: 'Exportar tabla actual: Descarga solo la tabla seleccionada en Excel', en: 'Export current table: Download only the selected table in Excel' };
+  translationsByKey['export_all_excel'] = { es: '💾 Exportar todas (Excel): Descarga todas las tablas en un solo archivo .xlsx con múltiples hojas', en: '💾 Export all (Excel): Download all tables in a single .xlsx file with multiple sheets' };
+
+  // Back-compat text->text map for strings that were not converted to data-i18n keys yet
+  var dict = {};
+  Object.keys(translationsByKey).forEach(function(k){ dict[translationsByKey[k].es] = translationsByKey[k].en; });
+
+  // Traducciones adicionales directas para el manual (sin claves)
+  dict['Campo de búsqueda en la parte superior del panel derecho'] = 'Search field at the top of the right panel';
+  dict['Filtra las tecnologías en tiempo real mientras escribes'] = 'Filters technologies in real-time as you type';
+  dict['No distingue entre mayúsculas y minúsculas'] = 'Case-insensitive';
+  dict['Haz clic en cualquier botón de tecnología para cargar sus tablas'] = 'Click any technology button to load its tables';
+  dict['Las tablas se muestran en el panel izquierdo automáticamente'] = 'Tables are displayed in the left panel automatically';
+  dict['Puedes ver múltiples tablas de la misma tecnología si tiene varias'] = 'You can view multiple tables from the same technology if it has several';
+  dict['Ubicado en la esquina superior derecha del panel de tecnologías (símbolo ✖)'] = 'Located in the upper right corner of the technology panel (✖ symbol)';
+  dict['Limpia la búsqueda del filtro'] = 'Clears the filter search';
+  dict['Limpia los resultados del panel izquierdo'] = 'Clears the left panel results';
+  dict['Columnas redimensionables: arrastra el borde derecho de cualquier encabezado'] = 'Resizable columns: drag the right edge of any header';
+  dict['Doble clic en el borde para restaurar el ancho original (220px)'] = 'Double-click on the edge to restore original width (220px)';
+  dict['Tooltip automático: pasa el cursor sobre cualquier celda para ver su contenido completo'] = 'Automatic tooltip: hover over any cell to see its full content';
+  dict['Las tablas mantienen ancho fijo de columna para uniformidad visual'] = 'Tables maintain fixed column width for visual uniformity';
+  dict['Prueba el filtro de tecnologías aquí mismo:'] = 'Try the technology filter right here:';
+  dict['Tabla de ejemplo:'] = 'Sample table:';
+  dict['Prueba los filtros y la selección de propuestas:'] = 'Try the filters and proposal selection:';
+  dict['Instrucciones:'] = 'Instructions:';
+  dict['Haz doble clic en cualquier celda para editarla. Presiona Enter para "guardar" o Escape para cancelar.'] = 'Double-click any cell to edit it. Press Enter to "save" or Escape to cancel.';
+  dict['PCB Min/Max Size (X/Y):'] = 'PCB Min/Max Size (X/Y):';
+  dict['Dimensiones mínimas y máximas de la placa'] = 'Minimum and maximum board dimensions';
+  dict['PCB Thickness:'] = 'PCB Thickness:';
+  dict['Grosor de la placa (opcional)'] = 'Board thickness (optional)';
+  dict['PCB Weight:'] = 'PCB Weight:';
+  dict['Peso de la placa (opcional)'] = 'Board weight (optional)';
+  dict['Tecnología:'] = 'Technology:';
+  dict['Dropdown para filtrar por tipo (SMT, AOI, etc.)'] = 'Dropdown to filter by type (SMT, AOI, etc.)';
+  dict['Documento:'] = 'Document:';
+  dict['Se actualiza dinámicamente según la tecnología seleccionada'] = 'Updates dynamically based on selected technology';
+  dict['Al seleccionar una tecnología, el dropdown "Documento" se actualiza con documentos asociados'] = 'When selecting a technology, the "Document" dropdown updates with associated documents';
+  dict['Puedes dejar campos vacíos para no filtrar por ese criterio'] = 'You can leave fields empty to not filter by that criterion';
+  dict['Botón "Limpiar filtros" vacía todos los campos y resetea los dropdowns'] = '"Clear filters" button empties all fields and resets dropdowns';
+  dict['El botón cambia a'] = 'The button changes to';
+  dict['Cancelar propuesta'] = 'Cancel proposal';
+  dict['mientras seleccionas'] = 'while selecting';
+  dict['Haz clic en filas de las tablas de resultados para seleccionarlas (cambian a color azul)'] = 'Click on result table rows to select them (they turn blue)';
+  dict['Un botón flotante verde'] = 'A floating green button';
+  dict['Preview propuesta (N)'] = 'Preview proposal (N)';
+  dict['aparece mostrando cuántas filas seleccionaste'] = 'appears showing how many rows you selected';
+  dict['Las selecciones se guardan en localStorage para restaurarlas si recargas la página'] = 'Selections are saved in localStorage to restore them if you reload the page';
+  dict['Haz clic en el botón flotante verde para abrir el modal de preview'] = 'Click the floating green button to open the preview modal';
+  dict['Asigna un nombre descriptivo a tu propuesta'] = 'Assign a descriptive name to your proposal';
+  dict['Opciones:'] = 'Options:';
+  dict['Guardar Excel:'] = 'Save Excel:';
+  dict['Descarga un archivo .xlsx con las filas seleccionadas'] = 'Downloads a .xlsx file with the selected rows';
+  dict['Guardar Base de datos:'] = 'Save to Database:';
+  dict['Guarda la propuesta en la DB (requiere login)'] = 'Saves the proposal to the DB (requires login)';
+  dict['Si tienes selecciones guardadas, al cargar la página aparece un prompt'] = 'If you have saved selections, a prompt appears when loading the page';
+  dict['Restaurar:'] = 'Restore:';
+  dict['Reactiva el modo selección con tus filas previamente seleccionadas'] = 'Reactivates selection mode with your previously selected rows';
+  dict['Ignorar:'] = 'Ignore:';
+  dict['Descarta la selección guardada y empieza limpio'] = 'Discards the saved selection and starts clean';
+  dict['Cada propuesta muestra su nombre, usuario creador y fecha de creación'] = 'Each proposal shows its name, creator user, and creation date';
+  dict['Íconos de usuario (👤) y fecha (📅) para identificar rápidamente'] = 'User (👤) and date (📅) icons for quick identification';
+  dict['Tarjetas organizadas visualmente con sombra y bordes'] = 'Visually organized cards with shadow and borders';
+  dict['Haz clic en el botón'] = 'Click the';
+  dict['Detalle'] = 'Details';
+  dict['de cualquier propuesta'] = 'button on any proposal';
+  dict['Se abre un modal mostrando todas las filas incluidas en esa propuesta'] = 'A modal opens showing all rows included in that proposal';
+  dict['La tabla del modal incluye todas las columnas y valores guardados'] = 'The modal table includes all saved columns and values';
+  dict['Botón disponible en cada tarjeta de propuesta'] = 'Button available on each proposal card';
+  dict['Descarga un archivo .xlsx con el nombre de la propuesta'] = 'Downloads a .xlsx file with the proposal name';
+  dict['Incluye todas las filas y columnas guardadas'] = 'Includes all saved rows and columns';
+  dict['Abre la página para ver propuestas existentes (si hay)'] = 'Open the page to view existing proposals (if any)';
+  dict['Haz clic en "Detalle" de cualquier propuesta para ver su contenido'] = 'Click "Details" on any proposal to view its content';
+  dict['Prueba exportar a Excel una propuesta de prueba'] = 'Try exporting a test proposal to Excel';
+  dict['Cierra los modales sin hacer cambios'] = 'Close modals without making changes';
+  dict['No recomendado en producción:'] = 'Not recommended in production:';
+  dict['Evita eliminar propuestas a menos que estés seguro. No hay función de "deshacer".'] = 'Avoid deleting proposals unless you are sure. There is no "undo" function.';
+  dict['Cada tecnología tiene su propia tarjeta con nombre y descripción'] = 'Each technology has its own card with name and description';
+  dict['Botón "Abrir Enlace" si hay URL externa asociada'] = '"Open Link" button if there is an associated external URL';
+  dict['Botón "Ver entradas relacionadas" si hay múltiples documentos'] = '"View related entries" button if there are multiple documents';
+  dict['Mensaje "Sin enlace" si no hay documentación disponible'] = '"No link" message if no documentation is available';
+  dict['Los enlaces se abren en una nueva pestaña'] = 'Links open in a new tab';
+  dict['Útil para acceder a manuales, PDFs o recursos compartidos'] = 'Useful for accessing manuals, PDFs, or shared resources';
+  dict['Navega por las tarjetas de documentación'] = 'Browse through documentation cards';
+  dict['Haz clic en "Abrir Enlace" para probar enlaces externos (se abren en nueva pestaña)'] = 'Click "Open Link" to test external links (opens in new tab)';
+  dict['Haz clic en "Ver entradas relacionadas" para explorar documentos adicionales'] = 'Click "View related entries" to explore additional documents';
+  dict['Nota:'] = 'Note:';
+  dict['Esta página es de'] = 'This page is';
+  dict['solo lectura'] = 'read-only';
+  dict[', no modifica datos.'] = ', does not modify data.';
+  dict['Prueba la edición de celdas (los cambios NO se guardan):'] = 'Try cell editing (changes are NOT saved):';
+  dict['Dropdown en la parte superior para elegir qué tabla editar'] = 'Dropdown at the top to choose which table to edit';
+  dict['Máximo 500 filas por tabla mostradas'] = 'Maximum 500 rows per table shown';
+  dict['Filtros por Tecnología y Usuario de propuestas'] = 'Filters by Technology and Proposals User';
+  dict['Haz doble clic en cualquier celda para editarla'] = 'Double-click any cell to edit it';
+  dict['Escribe el nuevo valor y presiona Enter para guardar'] = 'Type the new value and press Enter to save';
+  dict['Presiona Escape para cancelar la edición'] = 'Press Escape to cancel editing';
+  dict['Los cambios se guardan inmediatamente en la base de datos'] = 'Changes are saved immediately to the database';
+  dict['Botón "➕ Nueva tabla" en la parte superior'] = '"➕ New table" button at the top';
+  dict['Define nombre y columnas de la nueva tabla'] = 'Define name and columns for the new table';
+  dict['Exportar tabla actual:'] = 'Export current table:';
+  dict['Descarga solo la tabla seleccionada en Excel'] = 'Downloads only the selected table in Excel';
+  dict['💾 Exportar todas (Excel):'] = '💾 Export all (Excel):';
+  dict['Descarga todas las tablas en un solo archivo .xlsx con múltiples hojas'] = 'Downloads all tables in a single .xlsx file with multiple sheets';
+  dict['Pruebas seguras (solo visualización):'] = 'Safe tests (view only):';
+  dict['Selecciona diferentes tablas del dropdown para ver sus contenidos'] = 'Select different tables from the dropdown to view their contents';
+  dict['Usa los filtros de Tecnología y Usuario sin guardar cambios'] = 'Use Technology and User filters without saving changes';
+  dict['Exporta tablas a Excel para revisar offline (no modifica la DB)'] = 'Export tables to Excel for offline review (does not modify DB)';
+  dict['Editar celdas (guarda cambios inmediatamente)'] = 'Edit cells (saves changes immediately)';
+  dict['Crear nuevas tablas'] = 'Create new tables';
+  dict['Eliminar tablas'] = 'Delete tables';
+  dict['Si necesitas probar estas funciones, hazlo en un entorno de desarrollo o con datos de prueba.'] = 'If you need to test these functions, do so in a development environment or with test data.';
+  dict['ℹ️ Esta es una demo. Los cambios que hagas aquí NO se guardan en la base de datos real. Es solo para practicar.'] = 'ℹ️ This is a demo. Changes you make here are NOT saved to the real database. It is only for practice.';
+  dict['Botón de sol/luna en la esquina superior derecha'] = 'Sun/moon button in the upper right corner';
+  dict['Cambia entre tema claro y oscuro'] = 'Switches between light and dark theme';
+  dict['La preferencia se guarda en localStorage'] = 'Preference is saved in localStorage';
+  dict['Se aplica automáticamente en todas las páginas al recargar'] = 'Automatically applies to all pages on reload';
+  dict['Overlay de carga temporal mientras se aplica el cambio de tema'] = 'Temporary loading overlay while applying theme change';
+  dict['Banderas 🇲🇽 / 🇺🇸 entre Jabilito y el tema'] = 'Flags 🇲🇽 / 🇺🇸 between Jabilito and theme';
+  dict['Traduce textos estáticos de la interfaz (no los datos de las tablas)'] = 'Translates static interface texts (not table data)';
+  dict['Funciona en tiempo real sin recargar la página'] = 'Works in real-time without reloading the page';
+  dict['Botón ☰ en la esquina inferior derecha'] = '☰ button in the lower right corner';
+  dict['Acceso rápido a:'] = 'Quick access to:';
+  dict['OneDrive (SharePoint)'] = 'OneDrive (SharePoint)';
+  dict['Fuji Floor Monitor'] = 'Fuji Floor Monitor';
+  dict['ME Team KPIs'] = 'ME Team KPIs';
+  dict['Power BI'] = 'Power BI';
+  dict['Jabilito (Manual de Usuario - esta página)'] = 'Jabilito (User Manual - this page)';
+  dict['Toggle de tema'] = 'Theme toggle';
+  dict['Se cierra automáticamente al hacer clic fuera o presionar Escape'] = 'Automatically closes when clicking outside or pressing Escape';
+  dict['Redimensionar columnas:'] = 'Resize columns:';
+  dict['Arrastra el borde derecho de cualquier encabezado'] = 'Drag the right edge of any header';
+  dict['Restaurar ancho original:'] = 'Restore original width:';
+  dict['Doble clic en el borde del encabezado'] = 'Double-click on the header edge';
+  dict['Tooltips:'] = 'Tooltips:';
+  dict['Pasa el cursor sobre cualquier celda para ver el contenido completo'] = 'Hover over any cell to see the full content';
+  dict['Ancho fijo de 220px por defecto para uniformidad'] = 'Fixed 220px width by default for uniformity';
+  dict['Fuente reducida (13px) para mayor densidad de información'] = 'Reduced font (13px) for greater information density';
+  dict['Se muestra automáticamente durante:'] = 'Automatically shown during:';
+  dict['Navegación entre páginas'] = 'Navigation between pages';
+  dict['Envío de formularios'] = 'Form submissions';
+  dict['Peticiones fetch/XHR'] = 'Fetch/XHR requests';
+  dict['Cambio de tema'] = 'Theme change';
+  dict['Indica visualmente que el sistema está procesando'] = 'Visually indicates that the system is processing';
+  dict['Presente en todas las páginas excepto la principal'] = 'Present on all pages except the main one';
+  dict['Regresa a la página anterior (generalmente la home)'] = 'Returns to the previous page (usually home)';
+  dict['Ubicado en la esquina superior izquierda'] = 'Located in the upper left corner';
+  dict['Escape'] = 'Escape';
+  dict['- Cerrar menú Quick Launch si está abierto'] = '- Close Quick Launch menu if open';
+  dict['Enter'] = 'Enter';
+  dict['- Confirmar edición de celda en Admin'] = '- Confirm cell editing in Admin';
+  dict['- Cancelar edición de celda en Admin'] = '- Cancel cell editing in Admin';
+  dict['Usa el'] = 'Use the';
+  dict['filtro rápido'] = 'quick filter';
+  dict['en la página principal para encontrar tecnologías específicas más rápido'] = 'on the main page to find specific technologies faster';
+  dict['Activa el'] = 'Activate the';
+  dict['tema oscuro'] = 'dark theme';
+  dict['si trabajas en ambientes con poca luz para reducir fatiga visual'] = 'if you work in low-light environments to reduce eye strain';
+  dict['Antes de guardar una propuesta en la base de datos,'] = 'Before saving a proposal to the database,';
+  dict['previsualiza'] = 'preview';
+  dict['el contenido para asegurarte de que esté correcto'] = 'the content to make sure it is correct';
+  dict['Usa'] = 'Use';
+  dict['"Guardar Excel"'] = '"Save Excel"';
+  dict['para propuestas que necesites revisar offline o compartir por email'] = 'for proposals you need to review offline or share via email';
+  dict['El'] = 'The';
+  dict['Quick Launch'] = 'Quick Launch';
+  dict['te permite acceder a recursos externos sin salir de la aplicación'] = 'allows you to access external resources without leaving the application';
+  dict['Redimensiona las columnas de las tablas según tu preferencia y'] = 'Resize table columns according to your preference and';
+  dict['doble clic'] = 'double-click';
+  dict['para resetear si necesitas'] = 'to reset if needed';
+  dict['En Admin,'] = 'In Admin,';
+  dict['exporta tablas antes de hacer cambios masivos'] = 'export tables before making bulk changes';
+  dict['como respaldo'] = 'as a backup';
+  dict['Si tienes dudas o encuentras problemas, contacta al equipo de Machine Support:'] = 'If you have questions or encounter problems, contact the Machine Support team:';
+  dict['Machine Support B1 GDL'] = 'Machine Support B1 GDL';
+  
+  // Traducciones de encabezados de tablas y demos
+  dict['Equipo'] = 'Equipment';
+  dict['Modelo'] = 'Model';
+  dict['PCB Min Size X'] = 'PCB Min Size X';
+  dict['PCB Max Size X'] = 'PCB Max Size X';
+  dict['Throughput'] = 'Throughput';
+  dict['ID'] = 'ID';
+  dict['Status'] = 'Status';
+  dict['Activo'] = 'Active';
+  dict['Mantenimiento'] = 'Maintenance';
+  dict['🔍 Filtra tecnologías...'] = '🔍 Filter technologies...';
+  dict['SMT Fuji NXT'] = 'SMT Fuji NXT';
+  dict['AOI Koh Young'] = 'AOI Koh Young';
+  dict['Horno de Reflujo BTU'] = 'BTU Reflow Oven';
+  dict['Screen Printer DEK'] = 'DEK Screen Printer';
+  dict['X-Ray Nordson Dage'] = 'Nordson Dage X-Ray';
+  dict['Horno'] = 'Oven';
+  dict['SMT'] = 'SMT';
+  dict['AOI'] = 'AOI';
+  dict['Todas'] = 'All';
+  dict['🔍 Buscar'] = '🔍 Search';
+  dict['🗑️ Limpiar'] = '🗑️ Clear';
+  dict['✨ Armar propuesta'] = '✨ Build proposal';
+  dict['❌ Cancelar propuesta'] = '❌ Cancel proposal';
+  dict['Preview propuesta (0)'] = 'Preview proposal (0)';
+  dict['Preview de Propuesta (Demo)'] = 'Proposal Preview (Demo)';
+  dict['Nombre de propuesta:'] = 'Proposal name:';
+  dict['Mi propuesta de prueba'] = 'My test proposal';
+  dict['💾 Guardar Excel (demo)'] = '💾 Save Excel (demo)';
+  dict['❌ Cancelar'] = '❌ Cancel';
+  dict['Nota: Esta es una demo, no se guardará en la base de datos real.'] = 'Note: This is a demo, it will not be saved to the real database.';
+  dict['PCB Min X:'] = 'PCB Min X:';
+  dict['PCB Max X:'] = 'PCB Max X:';
+  dict['50'] = '50';
+  dict['300'] = '300';
+  dict['Permite buscar equipos por criterios específicos (tamaños de PCB, espesores, pesos) y armar propuestas seleccionando equipos de los resultados.'] = 'Allows searching for equipment by specific criteria (PCB sizes, thicknesses, weights) and building proposals by selecting equipment from results.';
+  dict['Muestra todas las propuestas guardadas en la base de datos. Puedes ver detalles, exportar a Excel, o eliminar propuestas.'] = 'Shows all saved proposals in the database. You can view details, export to Excel, or delete proposals.';
+  dict['Muestra enlaces a documentos técnicos organizados por tecnología. Cada entrada puede tener un enlace externo (ej: SharePoint, OneDrive) o mostrar entradas relacionadas.'] = 'Shows links to technical documents organized by technology. Each entry can have an external link (e.g., SharePoint, OneDrive) or show related entries.';
+  dict['Panel de administración para editar directamente las tablas de la base de datos. Permite modificar celdas, crear nuevas tablas y exportar datos.'] = 'Administration panel to directly edit database tables. Allows modifying cells, creating new tables, and exporting data.';
+  
+  // Más traducciones exhaustivas para cubrir TODO el manual
+  dict['Haz clic en'] = 'Click on';
+  dict['para activar el modo de selección'] = 'to activate selection mode';
+  dict['mientras seleccionas'] = 'while selecting';
+  dict['Armar propuesta'] = 'Build proposal';
+  dict['para guardar'] = 'to save';
+  dict['o'] = 'or';
+  dict['para cancelar'] = 'to cancel';
+  dict['(opcional)'] = '(optional)';
+  dict['(símbolo ✖)'] = '(✖ symbol)';
+  dict['(requiere login)'] = '(requires login)';
+  dict['Si'] = 'If';
+  dict['al cargar la página aparece un prompt'] = 'a prompt appears when loading the page';
+  dict['tienes selecciones guardadas,'] = 'you have saved selections,';
+  dict['de cualquier propuesta'] = 'on any proposal';
+  dict['para ver su contenido'] = 'to view its content';
+  dict['y empieza limpio'] = 'and start clean';
+  dict['con las filas seleccionadas'] = 'with the selected rows';
+  dict['múltiples documentos'] = 'multiple documents';
+  dict['documentación disponible'] = 'available documentation';
+  dict['(se abren en nueva pestaña)'] = '(opens in new tab)';
+  dict['adicionales'] = 'additional';
+  dict['sin guardar cambios'] = 'without saving changes';
+  dict['(no modifica la DB)'] = '(does not modify DB)';
+  dict['inmediatamente'] = 'immediately';
+  dict['de la nueva tabla'] = 'for the new table';
+  dict['con'] = 'with';
+  dict['en un solo archivo .xlsx'] = 'in a single .xlsx file';
+  dict['múltiples hojas'] = 'multiple sheets';
+  dict['con datos de prueba'] = 'with test data';
+  dict['entorno de desarrollo'] = 'development environment';
+  dict['en la esquina superior derecha'] = 'in the upper right corner';
+  dict['en la esquina inferior derecha'] = 'in the lower right corner';
+  dict['en la esquina superior izquierda'] = 'in the upper left corner';
+  dict['(generalmente la home)'] = '(usually home)';
+  dict['en todas las páginas excepto la principal'] = 'on all pages except the main one';
+  dict['al hacer clic fuera'] = 'when clicking outside';
+  dict['presionar'] = 'pressing';
+  dict['si está abierto'] = 'if open';
+  dict['en Admin'] = 'in Admin';
+  dict['más rápido'] = 'faster';
+  dict['específicas'] = 'specific';
+  dict['para encontrar tecnologías'] = 'to find technologies';
+  dict['ambientes con poca luz'] = 'low-light environments';
+  dict['fatiga visual'] = 'eye strain';
+  dict['para reducir'] = 'to reduce';
+  dict['si trabajas en'] = 'if you work in';
+  dict['esté correcto'] = 'is correct';
+  dict['para asegurarte de que'] = 'to make sure';
+  dict['Antes de guardar una propuesta en la base de datos,'] = 'Before saving a proposal to the database,';
+  dict['que necesites'] = 'you need';
+  dict['revisar offline'] = 'review offline';
+  dict['compartir por email'] = 'share via email';
+  dict['recursos externos'] = 'external resources';
+  dict['sin salir de la aplicación'] = 'without leaving the application';
+  dict['acceder a'] = 'access';
+  dict['según tu preferencia'] = 'according to your preference';
+  dict['las columnas de las tablas'] = 'table columns';
+  dict['si necesitas'] = 'if needed';
+  dict['cambios masivos'] = 'bulk changes';
+  dict['antes de hacer'] = 'before making';
+  dict['encuentras problemas'] = 'encounter problems';
+  dict['dudas'] = 'questions';
+  dict['Si tienes'] = 'If you have';
+  dict['contacta al equipo de'] = 'contact the team of';
+  
+  // Traducciones adicionales de frases largas y textos específicos del manual
+  dict['Haz clic en cualquier botón de tecnología para cargar sus tablas'] = 'Click any technology button to load its tables';
+  dict['Las tablas se muestran en el panel izquierdo automáticamente'] = 'Tables are displayed in the left panel automatically';
+  dict['Puedes ver múltiples tablas de la misma tecnología si tiene varias'] = 'You can view multiple tables from the same technology if it has several';
+  dict['Ubicado en la esquina superior derecha del panel de tecnologías (símbolo ✖)'] = 'Located in the upper right corner of the technology panel (✖ symbol)';
+  dict['Limpia la búsqueda del filtro'] = 'Clears the filter search';
+  dict['Limpia los resultados del panel izquierdo'] = 'Clears the left panel results';
+  dict['Columnas redimensionables: arrastra el borde derecho de cualquier encabezado'] = 'Resizable columns: drag the right edge of any header';
+  dict['Doble clic en el borde para restaurar el ancho original (220px)'] = 'Double-click on the edge to restore original width (220px)';
+  dict['Tooltip automático: pasa el cursor sobre cualquier celda para ver su contenido completo'] = 'Automatic tooltip: hover over any cell to see its full content';
+  dict['Las tablas mantienen ancho fijo de columna para uniformidad visual'] = 'Tables maintain fixed column width for visual uniformity';
+  dict['Haz clic en <span class="shortcut">Armar propuesta</span> para activar el modo de selección'] = 'Click <span class="shortcut">Build proposal</span> to activate selection mode';
+  dict['El botón cambia a <span class="shortcut">Cancelar propuesta</span> mientras seleccionas'] = 'The button changes to <span class="shortcut">Cancel proposal</span> while selecting';
+  dict['Haz clic en filas de las tablas de resultados para seleccionarlas (cambian a color azul)'] = 'Click on result table rows to select them (they turn blue)';
+  dict['Un botón flotante verde <span class="shortcut" style="background:#22c55e;">Preview propuesta (N)</span> aparece mostrando cuántas filas seleccionaste'] = 'A floating green button <span class="shortcut" style="background:#22c55e;">Preview proposal (N)</span> appears showing how many rows you selected';
+  dict['Las selecciones se guardan en localStorage para restaurarlas si recargas la página'] = 'Selections are saved in localStorage to restore them if you reload the page';
+  dict['Haz clic en el botón flotante verde para abrir el modal de preview'] = 'Click the floating green button to open the preview modal';
+  dict['Asigna un nombre descriptivo a tu propuesta'] = 'Assign a descriptive name to your proposal';
+  dict['<strong>Guardar Excel:</strong> Descarga un archivo .xlsx con las filas seleccionadas'] = '<strong>Save Excel:</strong> Downloads a .xlsx file with the selected rows';
+  dict['<strong>Guardar Base de datos:</strong> Guarda la propuesta en la DB (requiere login)'] = '<strong>Save to Database:</strong> Saves the proposal to the DB (requires login)';
+  dict['Si tienes selecciones guardadas, al cargar la página aparece un prompt'] = 'If you have saved selections, a prompt appears when loading the page';
+  dict['<strong>Restaurar:</strong> Reactiva el modo selección con tus filas previamente seleccionadas'] = '<strong>Restore:</strong> Reactivates selection mode with your previously selected rows';
+  dict['<strong>Ignorar:</strong> Descarta la selección guardada y empieza limpio'] = '<strong>Ignore:</strong> Discards the saved selection and starts clean';
+  dict['Cada propuesta muestra su nombre, usuario creador y fecha de creación'] = 'Each proposal shows its name, creator user, and creation date';
+  dict['Íconos de usuario (👤) y fecha (📅) para identificar rápidamente'] = 'User (👤) and date (📅) icons for quick identification';
+  dict['Tarjetas organizadas visualmente con sombra y bordes'] = 'Visually organized cards with shadow and borders';
+  dict['Haz clic en el botón <strong>"Detalle"</strong> de cualquier propuesta'] = 'Click the <strong>"Details"</strong> button on any proposal';
+  dict['Se abre un modal mostrando todas las filas incluidas en esa propuesta'] = 'A modal opens showing all rows included in that proposal';
+  dict['La tabla del modal incluye todas las columnas y valores guardados'] = 'The modal table includes all saved columns and values';
+  dict['Botón disponible en cada tarjeta de propuesta'] = 'Button available on each proposal card';
+  dict['Descarga un archivo .xlsx con el nombre de la propuesta'] = 'Downloads a .xlsx file with the proposal name';
+  dict['Incluye todas las filas y columnas guardadas'] = 'Includes all saved rows and columns';
+  dict['Abre la página para ver propuestas existentes (si hay)'] = 'Open the page to view existing proposals (if any)';
+  dict['Haz clic en "Detalle" de cualquier propuesta para ver su contenido'] = 'Click "Details" on any proposal to view its content';
+  dict['Prueba exportar a Excel una propuesta de prueba'] = 'Try exporting a test proposal to Excel';
+  dict['Cierra los modales sin hacer cambios'] = 'Close modals without making changes';
+  dict['<strong>⚠️ No recomendado en producción:</strong> Evita eliminar propuestas a menos que estés seguro. No hay función de "deshacer".'] = '<strong>⚠️ Not recommended in production:</strong> Avoid deleting proposals unless you are sure. There is no "undo" function.';
+  dict['Cada tecnología tiene su propia tarjeta con nombre y descripción'] = 'Each technology has its own card with name and description';
+  dict['Botón "Abrir Enlace" si hay URL externa asociada'] = '"Open Link" button if there is an associated external URL';
+  dict['Botón "Ver entradas relacionadas" si hay múltiples documentos'] = '"View related entries" button if there are multiple documents';
+  dict['Mensaje "Sin enlace" si no hay documentación disponible'] = '"No link" message if no documentation is available';
+  dict['Los enlaces se abren en una nueva pestaña'] = 'Links open in a new tab';
+  dict['Útil para acceder a manuales, PDFs o recursos compartidos'] = 'Useful for accessing manuals, PDFs, or shared resources';
+  dict['Navega por las tarjetas de documentación'] = 'Browse through documentation cards';
+  dict['Haz clic en "Abrir Enlace" para probar enlaces externos (se abren en nueva pestaña)'] = 'Click "Open Link" to test external links (opens in new tab)';
+  dict['Haz clic en "Ver entradas relacionadas" para explorar documentos adicionales'] = 'Click "View related entries" to explore additional documents';
+  dict['<strong>Nota:</strong> Esta página es de <em>solo lectura</em>, no modifica datos.'] = '<strong>Note:</strong> This page is <em>read-only</em>, does not modify data.';
+  dict['Dropdown en la parte superior para elegir qué tabla editar'] = 'Dropdown at the top to choose which table to edit';
+  dict['Máximo 500 filas por tabla mostradas'] = 'Maximum 500 rows per table shown';
+  dict['Filtros por Tecnología y Usuario de propuestas'] = 'Filters by Technology and Proposals User';
+  dict['Haz doble clic en cualquier celda para editarla'] = 'Double-click any cell to edit it';
+  dict['Escribe el nuevo valor y presiona Enter para guardar'] = 'Type the new value and press Enter to save';
+  dict['Presiona Escape para cancelar la edición'] = 'Press Escape to cancel editing';
+  dict['Los cambios se guardan inmediatamente en la base de datos'] = 'Changes are saved immediately to the database';
+  dict['Botón "➕ Nueva tabla" en la parte superior'] = '"➕ New table" button at the top';
+  dict['Define nombre y columnas de la nueva tabla'] = 'Define name and columns for the new table';
+  dict['<strong>Exportar tabla actual:</strong> Descarga solo la tabla seleccionada en Excel'] = '<strong>Export current table:</strong> Downloads only the selected table in Excel';
+  dict['<strong>💾 Exportar todas (Excel):</strong> Descarga todas las tablas en un solo archivo .xlsx con múltiples hojas'] = '<strong>💾 Export all (Excel):</strong> Downloads all tables in a single .xlsx file with multiple sheets';
+  dict['Selecciona diferentes tablas del dropdown para ver sus contenidos'] = 'Select different tables from the dropdown to view their contents';
+  dict['Usa los filtros de Tecnología y Usuario sin guardar cambios'] = 'Use Technology and User filters without saving changes';
+  dict['Exporta tablas a Excel para revisar offline (no modifica la DB)'] = 'Export tables to Excel for offline review (does not modify DB)';
+  dict['<strong>⚠️ NO recomendado para pruebas:</strong>'] = '<strong>⚠️ NOT recommended for testing:</strong>';
+  dict['Editar celdas (guarda cambios inmediatamente)'] = 'Edit cells (saves changes immediately)';
+  dict['Crear nuevas tablas'] = 'Create new tables';
+  dict['Eliminar tablas'] = 'Delete tables';
+  dict['Si necesitas probar estas funciones, hazlo en un entorno de desarrollo o con datos de prueba.'] = 'If you need to test these functions, do so in a development environment or with test data.';
+  dict['Botón de sol/luna en la esquina superior derecha'] = 'Sun/moon button in the upper right corner';
+  dict['Cambia entre tema claro y oscuro'] = 'Switches between light and dark theme';
+  dict['La preferencia se guarda en localStorage'] = 'Preference is saved in localStorage';
+  dict['Se aplica automáticamente en todas las páginas al recargar'] = 'Automatically applies to all pages on reload';
+  dict['Overlay de carga temporal mientras se aplica el cambio de tema'] = 'Temporary loading overlay while applying theme change';
+  dict['Banderas 🇲🇽 / 🇺🇸 entre Jabilito y el tema'] = 'Flags 🇲🇽 / 🇺🇸 between Jabilito and theme';
+  dict['Traduce textos estáticos de la interfaz (no los datos de las tablas)'] = 'Translates static interface texts (not table data)';
+  dict['Funciona en tiempo real sin recargar la página'] = 'Works in real-time without reloading the page';
+  dict['Botón ☰ en la esquina inferior derecha'] = '☰ button in the lower right corner';
+  dict['OneDrive (SharePoint)'] = 'OneDrive (SharePoint)';
+  dict['Fuji Floor Monitor'] = 'Fuji Floor Monitor';
+  dict['ME Team KPIs'] = 'ME Team KPIs';
+  dict['Power BI'] = 'Power BI';
+  dict['Jabilito (Manual de Usuario - esta página)'] = 'Jabilito (User Manual - this page)';
+  dict['Toggle de tema'] = 'Theme toggle';
+  dict['Se cierra automáticamente al hacer clic fuera o presionar Escape'] = 'Automatically closes when clicking outside or pressing Escape';
+  dict['<strong>Redimensionar columnas:</strong> Arrastra el borde derecho de cualquier encabezado'] = '<strong>Resize columns:</strong> Drag the right edge of any header';
+  dict['<strong>Restaurar ancho original:</strong> Doble clic en el borde del encabezado'] = '<strong>Restore original width:</strong> Double-click on the header edge';
+  dict['<strong>Tooltips:</strong> Pasa el cursor sobre cualquier celda para ver el contenido completo'] = '<strong>Tooltips:</strong> Hover over any cell to see the full content';
+  dict['Ancho fijo de 220px por defecto para uniformidad'] = 'Fixed 220px width by default for uniformity';
+  dict['Fuente reducida (13px) para mayor densidad de información'] = 'Reduced font (13px) for greater information density';
+  dict['Se muestra automáticamente durante:'] = 'Automatically shown during:';
+  dict['Navegación entre páginas'] = 'Navigation between pages';
+  dict['Envío de formularios'] = 'Form submissions';
+  dict['Peticiones fetch/XHR'] = 'Fetch/XHR requests';
+  dict['Indica visualmente que el sistema está procesando'] = 'Visually indicates that the system is processing';
+  dict['Presente en todas las páginas excepto la principal'] = 'Present on all pages except the main one';
+  dict['Regresa a la página anterior (generalmente la home)'] = 'Returns to the previous page (usually home)';
+  dict['<span class="shortcut">Escape</span> - Cerrar menú Quick Launch si está abierto'] = '<span class="shortcut">Escape</span> - Close Quick Launch menu if open';
+  dict['<span class="shortcut">Enter</span> - Confirmar edición de celda en Admin'] = '<span class="shortcut">Enter</span> - Confirm cell editing in Admin';
+  dict['<span class="shortcut">Escape</span> - Cancelar edición de celda en Admin'] = '<span class="shortcut">Escape</span> - Cancel cell editing in Admin';
+  
+  // Nuevas traducciones faltantes
+  dict['Instructions: Haz doble clic en cualquier celda para editarla. Presiona Enter para "guardar" o Escape para cancelar.'] = 'Instructions: Double-click any cell to edit it. Press Enter to "save" or Escape to cancel.';
+  dict['Haz doble clic en cualquier celda para editarla. Presiona Enter para "guardar" o Escape para cancelar.'] = 'Double-click any cell to edit it. Press Enter to "save" or Escape to cancel.';
+  dict['Resize columns:'] = 'Resize columns:';
+  dict['Arrastra el borde derecho de cualquier encabezado'] = 'Drag the right edge of any header';
+  dict['Restore original width:'] = 'Restore original width:';
+  dict['Doble clic en el borde del encabezado'] = 'Double-click on the header edge';
+  dict['Tooltips:'] = 'Tooltips:';
+  dict['Pasa el cursor sobre cualquier celda para ver el contenido completo'] = 'Hover over any cell to see the full content';
+  dict['Fixed 220px width by default for uniformity'] = 'Fixed 220px width by default for uniformity';
+  dict['Reduced font (13px) for greater information density'] = 'Reduced font (13px) for greater information density';
+  dict['Se muestra automáticamente durante:'] = 'Automatically shown during:';
+  dict['Navigation between pages'] = 'Navigation between pages';
+  dict['Form submissions'] = 'Form submissions';
+  dict['Fetch/XHR requests'] = 'Fetch/XHR requests';
+  dict['Theme change'] = 'Theme change';
+  dict['Visualmente indica que el sistema está procesando'] = 'Visually indicates that the system is processing';
+  dict['Escape - Cerrar menú Quick Launch si está abierto'] = 'Escape - Close Quick Launch menu if open';
+  dict['Enter - Confirmar edición de celda en Admin'] = 'Enter - Confirm cell edit in Admin';
+  dict['Escape - Cancelar edición de celda en Admin'] = 'Escape - Cancel cell edit in Admin';
+  
+  // Export options
+  dict['Export:'] = 'Export:';
+  dict['Export current table:'] = 'Export current table:';
+  dict['Descarga solo la tabla seleccionada en Excel'] = 'Download only the selected table in Excel';
+  dict['💾 Export all (Excel):'] = '💾 Export all (Excel):';
+  dict['Descarga todas las tablas en un solo archivo .xlsx con múltiples hojas'] = 'Download all tables in a single .xlsx file with multiple sheets';
+  dict['⚠️ NO recomendado para pruebas:'] = '⚠️ NOT recommended for testing:';
+  
+  dict['Usa el quick filter en la página principal para encontrar tecnologías específicas más rápido'] = 'Use the quick filter on the main page to find specific technologies faster';
+  dict['Activa el dark theme si trabajas en ambientes con poca luz para reducir fatiga visual'] = 'Enable dark theme if you work in low-light environments to reduce eye strain';
+  dict['Antes de guardar una propuesta en la base de datos, preview el contenido para asegurarte de que esté correcto'] = 'Before saving a proposal to the database, preview the content to ensure it\'s correct';
+  dict['Usa "Save Excel" para propuestas que necesites revisar offline o compartir por email'] = 'Use "Save Excel" for proposals you need to review offline or share via email';
+  dict['El Quick Launch te permite acceder a recursos externos sin salir de la aplicación'] = 'Quick Launch allows you to access external resources without leaving the application';
+  dict['Redimensiona las columnas de las tablas según tu preferencia y double-click para resetear si necesitas'] = 'Resize table columns to your preference and double-click to reset if needed';
+  dict['En Admin, export tables before making bulk changes como respaldo'] = 'In Admin, export tables before making bulk changes as a backup';
+  
+  dict['Usa el <strong>filtro rápido</strong> en la página principal para encontrar tecnologías específicas más rápido'] = 'Use the <strong>quick filter</strong> on the main page to find specific technologies faster';
+  dict['Activa el <strong>tema oscuro</strong> si trabajas en ambientes con poca luz para reducir fatiga visual'] = 'Activate the <strong>dark theme</strong> if you work in low-light environments to reduce eye strain';
+  dict['Antes de guardar una propuesta en la base de datos, <strong>previsualiza</strong> el contenido para asegurarte de que esté correcto'] = 'Before saving a proposal to the database, <strong>preview</strong> the content to make sure it is correct';
+  dict['Usa <strong>"Guardar Excel"</strong> para propuestas que necesites revisar offline o compartir por email'] = 'Use <strong>"Save Excel"</strong> for proposals you need to review offline or share via email';
+  dict['El <strong>Quick Launch</strong> te permite acceder a recursos externos sin salir de la aplicación'] = 'The <strong>Quick Launch</strong> allows you to access external resources without leaving the application';
+  dict['Redimensiona las columnas de las tablas según tu preferencia y <strong>doble clic</strong> para resetear si necesitas'] = 'Resize table columns according to your preference and <strong>double-click</strong> to reset if needed';
+  dict['En Admin, <strong>exporta tablas antes de hacer cambios masivos</strong> como respaldo'] = 'In Admin, <strong>export tables before making bulk changes</strong> as a backup';
+  dict['Si tienes dudas o encuentras problemas, contacta al equipo de Machine Support:'] = 'If you have questions or encounter problems, contact the Machine Support team:';
+
+  // Reverse mapping English -> Spanish for fallback text translations
+  var revDict = {};
+  Object.keys(dict).forEach(function(k){ revDict[dict[k]] = k; });
+
+  function applyKeyTranslation(el, key, lang){
+    var map = translationsByKey[key];
+    if(!map) return false;
+    var text = (lang === 'en') ? map.en : map.es;
+    // when element contains child elements, replace only text nodes: simple approach set textContent
+    el.textContent = text;
+    return true;
+  }
+
+  function translateElement(el, lang){
+    try{
+      // Skip DB tables/data
+      if(el.classList && (el.classList.contains('data-table') || el.closest && el.closest('.data-table'))) return;
+
+      // 1) data-i18n attribute takes precedence
+      var key = el.getAttribute && (el.getAttribute('data-i18n') || el.dataset && el.dataset.i18n);
+      if(key){
+        if(applyKeyTranslation(el, key, lang)) return;
+      }
+
+      // 2) support data-i18n-title -> translate title attribute
+      var keyTitle = el.getAttribute && (el.getAttribute('data-i18n-title') || el.dataset && el.dataset.i18nTitle);
+      if(keyTitle){
+        var map = translationsByKey[keyTitle];
+        if(map){ 
+          var textVal = (lang === 'en') ? map.en : map.es;
+          try{ el.title = textVal; }catch(e){}
+          try{ el.setAttribute && el.setAttribute('aria-label', textVal); }catch(e){}
+        }
+      }
+      // 2b) support data-i18n-placeholder -> translate placeholder attribute
+      var keyPlace = el.getAttribute && (el.getAttribute('data-i18n-placeholder') || el.dataset && el.dataset.i18nPlaceholder);
+      if(keyPlace){
+        var pmap = translationsByKey[keyPlace];
+        if(pmap){ try{ el.placeholder = (lang === 'en') ? pmap.en : pmap.es; }catch(e){} }
+      }
+
+      // 3) fallback: translate visible text by matching full trimmed content
+      // Apply fallback to elements with no child elements OR only text/inline elements
+      var hasOnlyTextOrInline = true;
+      if(el.children && el.children.length > 0){
+        for(var i = 0; i < el.children.length; i++){
+          var child = el.children[i];
+          var tag = child.tagName ? child.tagName.toLowerCase() : '';
+          // Allow inline elements like strong, em, span, code, a
+          if(tag !== 'strong' && tag !== 'em' && tag !== 'span' && tag !== 'code' && tag !== 'a' && tag !== 'b' && tag !== 'i' && tag !== 'u'){
+            hasOnlyTextOrInline = false;
+            break;
+          }
+        }
+      }
+      
+      if(hasOnlyTextOrInline){
+        // If the element has child nodes, translate text nodes and inline children
+        // individually to avoid removing child elements/attributes (like <a href=>).
+        if(el.children && el.children.length > 0){
+          Array.from(el.childNodes).forEach(function(node){
+            try{
+              if(node.nodeType === Node.TEXT_NODE){
+                var txt = node.nodeValue && node.nodeValue.trim();
+                if(txt){
+                  if(lang === 'en' && dict[txt]){
+                    node.nodeValue = dict[txt];
+                  } else if(lang !== 'en' && revDict[txt]){
+                    node.nodeValue = revDict[txt];
+                  }
+                }
+              } else if(node.nodeType === 1){
+                // Element node — recurse so anchors and other inline tags keep their attributes
+                translateElement(node, lang);
+              }
+            }catch(e){ /* ignore individual node errors */ }
+          });
+        } else {
+          var t = el.textContent && el.textContent.trim();
+          if(t){
+            if(lang === 'en'){
+              if(dict[t]) el.textContent = dict[t];
+            } else {
+              if(revDict[t]) el.textContent = revDict[t];
+            }
+          }
+        }
+      }
+    }catch(e){ /* ignore errors per element */ }
+  }
+
+  function walkAndTranslate(rootEl, lang){
+    try{
+      // translate root itself if needed
+      translateElement(rootEl, lang);
+      // Avoid walking into large data tables or heavy containers which
+      // contain many rows (these are skipped by translateElement but
+      // traversing them is expensive). Use a NodeFilter to reject
+      // nodes inside these containers so the walker doesn't visit them.
+      var skipSelector = '.data-table, .tabla-container, .proposals-row';
+      var filter = {
+        acceptNode: function(node){
+          try{
+            // If this node is inside any heavy container, reject it (and its subtree)
+            if(node.closest && node.closest(skipSelector)) return NodeFilter.FILTER_REJECT;
+          }catch(e){ }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      };
+      var walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_ELEMENT, filter, false);
+      while(walker.nextNode()){
+        var el = walker.currentNode;
+        translateElement(el, lang);
+      }
+    }catch(e){}
+  }
+
+  function applyLanguage(lang){
+    document.body.setAttribute('data-lang', lang);
+    walkAndTranslate(document.body, lang);
+    // Update flag visual state
+    try{
+      var btn = document.querySelector('.header-lang-toggle');
+      if(btn){
+        var mx = btn.querySelector('.lang-mx');
+        var us = btn.querySelector('.lang-us');
+        if(mx && us){
+          if(lang === 'es'){
+            mx.classList.add('lang-active'); mx.classList.remove('lang-inactive');
+            us.classList.add('lang-inactive'); us.classList.remove('lang-active');
+          } else {
+            us.classList.add('lang-active'); us.classList.remove('lang-inactive');
+            mx.classList.add('lang-inactive'); mx.classList.remove('lang-active');
+          }
+        }
+      }
+    }catch(e){}
+  }
+
+  function init(){
+    var pref = 'es';
+    try { pref = localStorage.getItem(LANG_KEY) || 'es'; } catch(e){}
+    applyLanguage(pref);
+    document.querySelectorAll('.header-lang-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var current = document.body.getAttribute('data-lang') || 'es';
+        var next = (current === 'es') ? 'en' : 'es';
+        try { localStorage.setItem(LANG_KEY, next); } catch(e){}
+        applyLanguage(next);
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+  // Expose a small global API so other JS can trigger translation for dynamic nodes
+  try{ window.i18nApplyLanguage = function(lang){ try{ applyLanguage(lang); }catch(e){} }; window.i18nGetLang = function(){ return document.body && document.body.getAttribute('data-lang') || 'es'; } }catch(e){}
+  try{ window.i18nTranslations = translationsByKey; }catch(e){}
+})();
+</script>
+<script>
+// Position `.header-mid` at midpoint between logo and the right controls (theme toggle)
+(function(){
+  function placeHeaderMid(){
+    try{
+      var logo = document.querySelector('.site-logo');
+      var toggle = document.querySelector('.site-header .theme-toggle-btn');
+      var mid = document.querySelector('.site-header .header-mid');
+      if(!logo || !toggle || !mid) return;
+      var logRect = logo.getBoundingClientRect();
+      var togRect = toggle.getBoundingClientRect();
+      // compute midpoint x in viewport, then convert to site-header coordinate
+      var midX = (logRect.right + togRect.left) / 2;
+      var headerRect = document.querySelector('.site-header').getBoundingClientRect();
+      var left = midX - headerRect.left; // px from header left
+      // center the mid container horizontally on that point
+      mid.style.left = left + 'px';
+      mid.style.transform = 'translate(-50%, -50%)';
+      mid.style.visibility = 'visible';
+    }catch(e){ /* fail silently */ }
+  }
+  // run on load and resize
+  document.addEventListener('DOMContentLoaded', placeHeaderMid);
+  window.addEventListener('resize', function(){
+    // throttle a bit
+    clearTimeout(window.__placeMidTimer);
+    window.__placeMidTimer = setTimeout(placeHeaderMid, 120);
+  });
+  // also run shortly after load in case images load late
+  window.setTimeout(placeHeaderMid, 300);
+})();
+</script>
+<!-- Global loading overlay helpers: show overlay when navigating or when fetch/XHR in progress -->
+<script>
+(function(){
+  var overlay = document.getElementById('loading-overlay');
+  function showLoading(){ if(!overlay) return; overlay.classList.add('visible'); overlay.setAttribute('aria-hidden','false'); }
+  function hideLoading(){ if(!overlay) return; overlay.classList.remove('visible'); overlay.setAttribute('aria-hidden','true'); }
+
+  // Expose to global so other scripts can call
+  window.showAppLoading = showLoading;
+  window.hideAppLoading = hideLoading;
+
+  // When leaving the page (navigation), show overlay to indicate work
+  window.addEventListener('beforeunload', function(){ try{ showLoading(); }catch(e){} });
+
+  // Intercept same-origin link clicks (left-click, no modifier) and show overlay
+  document.addEventListener('click', function(e){
+    try{
+      if(e.defaultPrevented) return;
+      // only left-clicks
+      if(e.button !== 0) return;
+      if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest && e.target.closest('a');
+      if(!a) return;
+      var href = a.getAttribute('href');
+      if(!href || href.indexOf('javascript:') === 0 || href.startsWith('#')) return;
+      // ignore external links opening new tab/window
+      if(a.target && a.target !== '' && a.target !== '_self') return;
+      var loc = location;
+      try{ var url = new URL(href, loc.href); if(url.origin !== loc.origin) return; }catch(err){ return; }
+      showLoading();
+    }catch(err){ /* ignore */ }
+  }, true);
+
+  // Intercept form submits to show overlay
+  document.addEventListener('submit', function(e){ try{ if(!e.defaultPrevented) showLoading(); }catch(err){} }, true);
+
+  // Monkey-patch fetch to show overlay while requests are outstanding
+  if(window.fetch){
+    var _fetch = window.fetch.bind(window);
+    var pending = 0;
+    window.fetch = function(){
+      try{ pending++; showLoading(); }catch(e){}
+      var p = _fetch.apply(null, arguments);
+      // ensure overlay hidden when promise settles
+      p.finally(function(){ try{ pending = Math.max(0, pending-1); if(pending === 0) hideLoading(); }catch(e){} });
+      return p;
+    };
+  }
+
+  // Monkey-patch XHR send to show overlay during request
+  try{
+    var X = window.XMLHttpRequest;
+    if(X && X.prototype){
+      var origSend = X.prototype.send;
+      X.prototype.send = function(){
+        try{ showLoading(); var self = this; var clear = function(){ try{ hideLoading(); }catch(e){} }; this.addEventListener('loadend', clear); }
+        catch(e){}
+        return origSend.apply(this, arguments);
+      };
+    }
+  }catch(e){ /* ignore */ }
+
+})();
+</script>
+<script>
+// Add title attribute to all data-table cells for tooltip on hover
+(function(){
+  function addTitlesToTableCells(){
+    try{
+      var tables = document.querySelectorAll('.data-table');
+      tables.forEach(function(table){
+        var cells = table.querySelectorAll('td, th');
+        cells.forEach(function(cell){
+          // Set title to cell's text content for tooltip
+          var text = cell.textContent.trim();
+          if(text && !cell.hasAttribute('title')){
+            cell.setAttribute('title', text);
+          }
+        });
+      });
+    }catch(e){}
+  }
+  
+  // Run on DOM ready
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', addTitlesToTableCells);
+  } else {
+    addTitlesToTableCells();
+  }
+  
+  // Also run when new content is dynamically added (e.g., search results)
+  var observer = new MutationObserver(function(mutations){
+    var shouldUpdate = false;
+    mutations.forEach(function(m){
+      if(m.addedNodes && m.addedNodes.length > 0){
+        for(var i = 0; i < m.addedNodes.length; i++){
+          var node = m.addedNodes[i];
+          if(node.nodeType === 1 && (node.classList.contains('data-table') || node.querySelector('.data-table'))){
+            shouldUpdate = true;
+            break;
+          }
+        }
+      }
+    });
+    if(shouldUpdate) addTitlesToTableCells();
+  });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
+<script>
+// Column resizing for data tables (similar to Excel)
+(function(){
+  var resizing = null;
+  var startX = 0;
+  var startWidth = 0;
+  var currentCol = null;
+  
+  function initializeResizableColumns(){
+    var tables = document.querySelectorAll('.data-table, .demo-table');
+    tables.forEach(function(table){
+      // Skip if already initialized
+      if(table.hasAttribute('data-resizable')) return;
+      table.setAttribute('data-resizable', 'true');
+      
+      var headers = table.querySelectorAll('thead th, th');
+      headers.forEach(function(th, index){
+        // Make header position relative for the resize handle
+        th.style.position = 'relative';
+        th.style.userSelect = 'none';
+        
+        // Add resize handle (invisible but detectable)
+        var resizer = document.createElement('div');
+        resizer.className = 'resize-handle';
+        resizer.style.cssText = 'position:absolute;top:0;right:0;width:8px;height:100%;cursor:col-resize;z-index:10;';
+        th.appendChild(resizer);
+        
+        // Store original width
+        if(!th.hasAttribute('data-original-width')){
+          th.setAttribute('data-original-width', th.offsetWidth);
+        }
+        
+        resizer.addEventListener('mousedown', function(e){
+          e.preventDefault();
+          resizing = true;
+          currentCol = th;
+          startX = e.pageX;
+          startWidth = th.offsetWidth;
+          document.body.style.cursor = 'col-resize';
+          document.body.style.userSelect = 'none';
+        });
+        
+        // Double-click to reset to original width
+        resizer.addEventListener('dblclick', function(e){
+          e.preventDefault();
+          var originalWidth = parseInt(th.getAttribute('data-original-width') || 220);
+          
+          // Reset header
+          th.style.width = originalWidth + 'px';
+          th.style.minWidth = originalWidth + 'px';
+          
+          // Reset all cells in this column
+          var colIndex = Array.from(th.parentElement.children).indexOf(th);
+          var table = th.closest('table');
+          var rows = table.querySelectorAll('tbody tr');
+          rows.forEach(function(row){
+            var cell = row.children[colIndex];
+            if(cell){
+              cell.style.width = originalWidth + 'px';
+              cell.style.minWidth = originalWidth + 'px';
+            }
+          });
+        });
+      });
+    });
+  }
+  
+  document.addEventListener('mousemove', function(e){
+    if(!resizing) return;
+    if(!currentCol) return;
+    
+    var diff = e.pageX - startX;
+    var newWidth = startWidth + diff;
+    
+    // Minimum width to prevent collapse
+    if(newWidth < 60) newWidth = 60;
+    
+    // Apply new width
+    currentCol.style.width = newWidth + 'px';
+    currentCol.style.minWidth = newWidth + 'px';
+    
+    // Also set width on all cells in this column
+    var colIndex = Array.from(currentCol.parentElement.children).indexOf(currentCol);
+    var table = currentCol.closest('table');
+    var rows = table.querySelectorAll('tbody tr');
+    rows.forEach(function(row){
+      var cell = row.children[colIndex];
+      if(cell){
+        cell.style.width = newWidth + 'px';
+        cell.style.minWidth = newWidth + 'px';
+      }
+    });
+  });
+  
+  document.addEventListener('mouseup', function(){
+    if(resizing){
+      resizing = false;
+      currentCol = null;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+  });
+  
+  // Initialize on load
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initializeResizableColumns);
+  } else {
+    initializeResizableColumns();
+  }
+  
+  // Re-initialize when new tables are added
+  var observer = new MutationObserver(function(mutations){
+    var shouldInit = false;
+    mutations.forEach(function(m){
+      if(m.addedNodes && m.addedNodes.length > 0){
+        for(var i = 0; i < m.addedNodes.length; i++){
+          var node = m.addedNodes[i];
+          if(node.nodeType === 1 && (node.classList.contains('data-table') || node.classList.contains('demo-table') || node.querySelector('.data-table') || node.querySelector('.demo-table'))){
+            shouldInit = true;
+            break;
+          }
+        }
+      }
+    });
+    if(shouldInit){
+      setTimeout(initializeResizableColumns, 50);
+    }
+  });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
