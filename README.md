@@ -118,9 +118,10 @@ Suggested extensions
 
 Contact / Author
 ----------------
-- Changes made by the local team. If you want a live review or want me to start the server for testing, let me know and I can run it.
+- Luis Fernando Monjaraz Briseño
 
 ---
 
 Main file: `app.py` — review key functions: `detect_image_in_column`, `resolve_tech_image_src`, `get_equipment_pcb_sizes`, `/propuestas`, and `/image_for_headers`.
+
 
